@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bab 6: Unsur-unsur Bangun Ruang Sisi Datar | Matematika Kelas IX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4af37;
+    --gold-soft: #e9c767;
+    --gold-deep: #a8842a;
+    --ink: #0a0e1a;
+    --ink-2: #111729;
+    --ink-3: #1a2138;
+    --text: #e8e4d8;
+    --muted: #a9a28c;
+    --success: #4caf50;
+    --error: #f44336;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #070912 0%, #0a0e1a 50%, #06080f 100%);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,14,26,0.85);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  .nav-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a {
+    color: var(--text); text-decoration: none;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    transition: color 0.3s; display: flex; align-items: center; gap: 6px;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px;
+  }
+
+  /* ===== HEADER ===== */
+  .chapter-header {
+    text-align: center; margin-bottom: 50px;
+    padding-bottom: 30px; border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+  .chapter-header .eyebrow {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .chapter-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px); font-weight: 700;
+    background: linear-gradient(180deg, #fff 0%, var(--gold-soft) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 16px;
+  }
+  .chapter-header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px; color: var(--muted);
+    max-width: 700px; margin: 0 auto 20px;
+  }
+  .author-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 10px 20px; background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 30px;
+    font-size: 13px; color: var(--gold-soft);
+  }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .content-section {
+    margin-bottom: 40px; padding: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+  .content-section:hover {
+    border-color: rgba(212,175,55,0.3);
+    background: rgba(255,255,255,0.03);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; color: var(--gold); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title::before {
+    content: ""; width: 4px; height: 24px; background: var(--gold); border-radius: 2px;
+  }
+  p { margin-bottom: 16px; color: #c9c2ad; }
+  
+  .highlight-box {
+    background: rgba(212,175,55,0.08);
+    border-left: 3px solid var(--gold);
+    padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+  }
+  .highlight-box h4 { color: var(--gold); margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  
+  .formula-box {
+    background: var(--ink-2); border: 1px solid rgba(212,175,55,0.3);
+    padding: 20px; border-radius: 8px; text-align: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 22px;
+    color: var(--gold-soft); margin: 20px 0; font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .example-box {
+    background: rgba(10,14,26,0.6); border: 1px dashed rgba(212,175,55,0.3);
+    padding: 24px; border-radius: 8px; margin: 20px 0;
+  }
+  .example-box strong { color: var(--gold); }
+
+  /* ===== SHAPE CARDS ===== */
+  .shape-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; margin: 24px 0;
+  }
+  .shape-card {
+    padding: 24px; text-align: center;
+    background: linear-gradient(145deg, rgba(26,33,56,0.6), rgba(10,14,26,0.6));
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px;
+    transition: all 0.4s;
+  }
+  .shape-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+  }
+  .shape-icon {
+    width: 100px; height: 100px; margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .shape-icon svg { width: 100%; height: 100%; }
+  .shape-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); font-size: 18px; margin-bottom: 8px;
+  }
+  .shape-card p {
+    font-size: 13px; color: var(--muted); margin: 0;
+  }
+
+  /* ===== TABLES ===== */
+  .table-wrapper { overflow-x: auto; margin: 20px 0; border-radius: 8px; border: 1px solid rgba(212,175,55,0.15); }
+  .luxury-table {
+    width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02);
+    min-width: 600px;
+  }
+  .luxury-table th {
+    background: rgba(212,175,55,0.15); color: var(--gold);
+    padding: 14px 16px; text-align: center;
+    font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px;
+  }
+  .luxury-table td {
+    padding: 14px 16px; border-bottom: 1px solid rgba(212,175,55,0.08);
+    color: #c9c2ad; font-size: 14px; text-align: center;
+  }
+  .luxury-table td:first-child { text-align: left; font-weight: 600; color: var(--gold-soft); }
+  .luxury-table tr:last-child td { border-bottom: none; }
+  .luxury-table tr:hover td { background: rgba(212,175,55,0.05); }
+
+  /* ===== ELEMENT LIST ===== */
+  .element-list {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px; margin: 24px 0;
+  }
+  .element-item {
+    padding: 20px; background: rgba(212,175,55,0.05);
+    border: 1px solid rgba(212,175,55,0.15);
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  .element-item:hover {
+    border-color: var(--gold);
+    background: rgba(212,175,55,0.08);
+  }
+  .element-item h4 {
+    color: var(--gold); font-family: 'Playfair Display', serif;
+    margin-bottom: 8px; font-size: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .element-item p { font-size: 13px; margin: 0; color: #c9c2ad; }
+
+  /* ===== ISLAMIC QUOTE ===== */
+  .islamic-quote {
+    text-align: center; padding: 40px 20px; margin: 40px 0;
+    background: radial-gradient(circle, rgba(212,175,55,0.05), transparent);
+    border-top: 1px solid rgba(212,175,55,0.1);
+    border-bottom: 1px solid rgba(212,175,55,0.1);
+  }
+  .islamic-quote .arabic {
+    font-size: 26px; color: var(--gold); margin-bottom: 16px;
+    font-family: 'Traditional Arabic', 'Arial', sans-serif; line-height: 1.6;
+  }
+  .islamic-quote .translation {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto;
+  }
+  .islamic-quote .source {
+    font-size: 12px; color: var(--gold-deep); margin-top: 12px; letter-spacing: 2px;
+  }
+
+  /* ===== REFERENCES ===== */
+  .reference-list { list-style: none; padding: 0; }
+  .reference-list li {
+    padding: 12px 0; border-bottom: 1px dashed rgba(212,175,55,0.2);
+    color: var(--muted); font-size: 14px; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .reference-list li::before { content: "📚"; flex-shrink: 0; margin-top: 2px; }
+  .reference-list li strong { color: var(--text); }
+
+  /* ===== KEYWORDS ===== */
+  .keywords {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 30px 0;
+  }
+  .keyword-tag {
+    padding: 6px 16px; background: rgba(212,175,55,0.1);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 20px;
+    font-size: 12px; color: var(--gold-soft); letter-spacing: 1px;
+  }
+
+  /* ===== UJI FORMATIF ===== */
+  .quiz-container {
+    margin-top: 60px; padding: 40px;
+    background: linear-gradient(145deg, rgba(26,33,56,0.8), rgba(10,14,26,0.8));
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .quiz-header { text-align: center; margin-bottom: 30px; }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); }
+  .quiz-header p { color: var(--muted); font-size: 14px; }
+
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 16px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif;
+    font-size: 14px; transition: all 0.3s;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none; border-color: var(--gold); background: rgba(255,255,255,0.08);
+  }
+
+  .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .question-text { font-weight: 500; margin-bottom: 16px; color: #fff; display: flex; gap: 10px; }
+  .question-num { color: var(--gold); font-family: 'Playfair Display', serif; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option-label {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .option-label:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3); }
+  .option-label input[type="radio"] { accent-color: var(--gold); width: 18px; height: 18px; }
+  .option-label.correct { background: rgba(76, 175, 80, 0.15); border-color: var(--success); }
+  .option-label.incorrect { background: rgba(244, 67, 54, 0.15); border-color: var(--error); }
+
+  textarea {
+    width: 100%; padding: 16px; min-height: 120px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif;
+    font-size: 14px; resize: vertical; transition: all 0.3s;
+  }
+  textarea:focus { outline: none; border-color: var(--gold); }
+
+  /* ===== ACTION BUTTONS ===== */
+  .action-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; justify-content: center; }
+  .btn {
+    padding: 14px 24px; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; border: none; border-radius: 4px;
+    cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600;
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: var(--ink); box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212,175,55,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid rgba(212,175,55,0.3); }
+  .btn-secondary:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+  .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+  .btn-outline:hover { background: rgba(212,175,55,0.1); }
+
+  /* ===== RESULTS ===== */
+  .results-panel {
+    display: none; margin-top: 30px; padding: 30px;
+    background: rgba(212,175,55,0.05); border: 1px solid var(--gold);
+    border-radius: 12px; text-align: center;
+  }
+  .results-panel.show { display: block; animation: fadeIn 0.5s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  
+  .score-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
+  .score-item { padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px; }
+  .score-item .label { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .score-item .value { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--gold); margin-top: 8px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid rgba(212,175,55,0.15);
+    padding: 40px 24px; text-align: center;
+    background: rgba(7,9,18,0.8); margin-top: 60px;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+  .footer-contact { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .footer-contact a { color: var(--gold-soft); text-decoration: none; }
+  .copyright { font-size: 11px; letter-spacing: 2px; color: #6b6555; text-transform: uppercase; }
+
+  /* ===== PRINT STYLES ===== */
+  @media print {
+    nav, .action-bar, footer { display: none !important; }
+    body { background: #fff; color: #000; }
+    .container { max-width: 100%; padding: 0; }
+    .content-section, .quiz-container { background: #fff; border: 1px solid #ccc; color: #000; break-inside: avoid; }
+    .section-title, .chapter-header h1 { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+    p, .question-text { color: #000 !important; }
+    .formula-box { background: #f5f5f5; color: #000; border-color: #000; }
+    .luxury-table th { background: #e0e0e0; color: #000; }
+    .luxury-table td { color: #000; border-bottom: 1px solid #ccc; }
+    .shape-card { background: #f9f9f9; border: 1px solid #ccc; }
+  }
+
+  @media (max-width: 600px) {
+    .score-display { grid-template-columns: 1fr; }
+    .action-bar { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="5.html">← Bab 5: Metode Campuran</a></li>
+      <li><a href="index.html">📖 Daftar Isi</a></li>
+      <li><a href="7.html">Bab 7: Jaring-jaring Prisma →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+
+  <!-- Chapter Header -->
+  <header class="chapter-header">
+    <div class="eyebrow">Pertemuan 06 • Matematika Kelas IX Semester 1</div>
+    <h1>Unsur-unsur Bangun Ruang Sisi Datar</h1>
+    <p class="subtitle">Mengenal struktur geometris kubus, balok, prisma, dan limas — fondasi memahami ruang tiga dimensi</p>
+    <div class="author-badge">
+      <span>👤 Asnimar, S.Pd</span>
+      <span>•</span>
+      <span>MTsN 10 Agam</span>
+    </div>
+  </header>
+
+  <!-- Section A -->
+  <section class="content-section">
+    <h3 class="section-title">A. Pengertian Bangun Ruang Sisi Datar</h3>
+    <p><strong>Bangun ruang sisi datar</strong> adalah bangun ruang tiga dimensi yang seluruh sisinya berupa bidang datar (tidak memiliki sisi lengkung). Bangun ruang ini memiliki panjang, lebar, dan tinggi, serta menempati ruang dalam kehidupan nyata.</p>
+    
+    <div class="highlight-box">
+      <h4>📌 Definisi Formal</h4>
+      <p style="margin:0; color: var(--text);">Bangun ruang sisi datar adalah bangun ruang yang dibatasi oleh bidang-bidang datar berbentuk segi banyak (poligon), seperti persegi, persegi panjang, segitiga, atau segi enam.</p>
+    </div>
+
+    <p>Bangun ruang sisi datar terdiri dari empat jenis utama, yaitu <strong>Kubus</strong>, <strong>Balok</strong>, <strong>Prisma</strong>, dan <strong>Limas</strong>. Masing-masing memiliki ciri khas dan unsur-unsur yang akan kita pelajari secara mendalam pada bab ini.</p>
+
+    <div class="shape-grid">
+      <div class="shape-card">
+        <div class="shape-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,30 70,30 85,15 35,15" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <polygon points="20,30 20,80 70,80 70,30" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <polygon points="70,30 85,15 85,65 70,80" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <line x1="20" y1="30" x2="70" y2="30" stroke="#d4af37" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>Kubus</h4>
+        <p>6 sisi persegi yang sama besar</p>
+      </div>
+      <div class="shape-card">
+        <div class="shape-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="15,35 75,35 90,20 30,20" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <polygon points="15,35 15,80 75,80 75,35" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <polygon points="75,35 90,20 90,65 75,80" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>Balok</h4>
+        <p>6 sisi persegi panjang</p>
+      </div>
+      <div class="shape-card">
+        <div class="shape-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,35 50,20 80,35 50,50" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <polygon points="20,35 20,80 50,95 80,80 80,35" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <line x1="50" y1="50" x2="50" y2="95" stroke="#d4af37" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>Prisma</h4>
+        <p>Alas & tutup segi-n, sisi tegak persegi panjang</p>
+      </div>
+      <div class="shape-card">
+        <div class="shape-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,80 50,85 80,80 50,20" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+            <line x1="20" y1="80" x2="50" y2="20" stroke="#d4af37" stroke-width="1.5"/>
+            <line x1="80" y1="80" x2="50" y2="20" stroke="#d4af37" stroke-width="1.5"/>
+            <line x1="50" y1="85" x2="50" y2="20" stroke="#d4af37" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>Limas</h4>
+        <p>Alas segi-n, sisi tegak segitiga</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B -->
+  <section class="content-section">
+    <h3 class="section-title">B. Unsur-unsur Bangun Ruang</h3>
+    <p>Setiap bangun ruang memiliki unsur-unsur penyusun yang menjadi fondasi untuk memahami sifat-sifatnya. Berikut adalah enam unsur utama bangun ruang:</p>
+    
+    <div class="element-list">
+      <div class="element-item">
+        <h4>📐 Sisi (Bidang)</h4>
+        <p>Permukaan datar yang membatasi bangun ruang. Pada kubus dan balok, sisi berbentuk persegi atau persegi panjang.</p>
+      </div>
+      <div class="element-item">
+        <h4>📏 Rusuk</h4>
+        <p>Garis pertemuan antara dua sisi bangun ruang. Rusuk dapat berupa rusuk alas, rusuk tegak, atau rusuk atas.</p>
+      </div>
+      <div class="element-item">
+        <h4>📍 Titik Sudut</h4>
+        <p>Titik pertemuan tiga atau lebih rusuk pada bangun ruang. Titik sudut juga disebut <em>vertex</em>.</p>
+      </div>
+      <div class="element-item">
+        <h4>📐 Diagonal Sisi</h4>
+        <p>Garis yang menghubungkan dua titik sudut yang berhadapan pada satu sisi bangun ruang.</p>
+      </div>
+      <div class="element-item">
+        <h4>📏 Diagonal Ruang</h4>
+        <p>Garis yang menghubungkan dua titik sudut yang berhadapan dalam ruang (melalui interior bangun).</p>
+      </div>
+      <div class="element-item">
+        <h4>📐 Bidang Diagonal</h4>
+        <p>Bidang yang dibentuk oleh dua diagonal sisi yang sejajar dan berhadapan dalam bangun ruang.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 Hubungan Euler</h4>
+      <p style="margin:0; color: var(--text);">Untuk bangun ruang sisi datar (polihedron), berlaku <strong>Teorema Euler</strong>:<br>
+      <strong style="color:var(--gold); font-size:18px;">V − E + F = 2</strong><br>
+      di mana V = jumlah titik sudut, E = jumlah rusuk, F = jumlah sisi.</p>
+    </div>
+  </section>
+
+  <!-- Section C -->
+  <section class="content-section">
+    <h3 class="section-title">C. Tabel Jumlah Unsur Setiap Bangun Ruang</h3>
+    <p>Berikut adalah perbandingan jumlah unsur-unsur untuk keempat jenis bangun ruang sisi datar:</p>
+    
+    <div class="table-wrapper">
+      <table class="luxury-table">
+        <thead>
+          <tr>
+            <th>Bangun Ruang</th>
+            <th>Jumlah Sisi</th>
+            <th>Jumlah Rusuk</th>
+            <th>Jumlah Titik Sudut</th>
+            <th>Diagonal Sisi</th>
+            <th>Diagonal Ruang</th>
+            <th>Bidang Diagonal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kubus</td>
+            <td>6</td>
+            <td>12</td>
+            <td>8</td>
+            <td>12</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Balok</td>
+            <td>6</td>
+            <td>12</td>
+            <td>8</td>
+            <td>12</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Prisma Segitiga</td>
+            <td>5</td>
+            <td>9</td>
+            <td>6</td>
+            <td>6</td>
+            <td>0</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Prisma Segiempat</td>
+            <td>6</td>
+            <td>12</td>
+            <td>8</td>
+            <td>12</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Prisma Segilima</td>
+            <td>7</td>
+            <td>15</td>
+            <td>10</td>
+            <td>20</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Limas Segitiga</td>
+            <td>4</td>
+            <td>6</td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Limas Segiempat</td>
+            <td>5</td>
+            <td>8</td>
+            <td>5</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Limas Segilima</td>
+            <td>6</td>
+            <td>10</td>
+            <td>6</td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="formula-box">
+      Prisma segi-n: Sisi = n + 2 &nbsp;|&nbsp; Rusuk = 3n &nbsp;|&nbsp; Titik Sudut = 2n<br>
+      Limas segi-n: Sisi = n + 1 &nbsp;|&nbsp; Rusuk = 2n &nbsp;|&nbsp; Titik Sudut = n + 1
+    </div>
+  </section>
+
+  <!-- Section D -->
+  <section class="content-section">
+    <h3 class="section-title">D. Penjelasan Detail Setiap Bangun Ruang</h3>
+    
+    <div class="example-box">
+      <strong>📦 1. KUBUS</strong><br>
+      Kubus adalah bangun ruang sisi datar yang dibatasi oleh <strong>6 buah sisi berbentuk persegi</strong> yang sama besar. Semua rusuknya memiliki panjang yang sama.
+    </div>
+    <p><strong>Ciri-ciri Kubus:</strong></p>
+    <ul style="margin-left: 20px; color: #c9c2ad; margin-bottom: 16px;">
+      <li>Memiliki 6 sisi berbentuk persegi yang sama besar</li>
+      <li>Memiliki 12 rusuk yang sama panjang</li>
+      <li>Memiliki 8 titik sudut</li>
+      <li>Memiliki 12 diagonal sisi dan 4 diagonal ruang</li>
+      <li>Memiliki 6 bidang diagonal berbentuk persegi panjang</li>
+    </ul>
+
+    <div class="example-box">
+      <strong>📦 2. BALOK</strong><br>
+      Balok adalah bangun ruang sisi datar yang dibatasi oleh <strong>6 buah sisi berbentuk persegi panjang</strong>, dengan tiga pasang sisi yang sejajar dan sama besar.
+    </div>
+    <p><strong>Ciri-ciri Balok:</strong></p>
+    <ul style="margin-left: 20px; color: #c9c2ad; margin-bottom: 16px;">
+      <li>Memiliki 6 sisi berbentuk persegi panjang</li>
+      <li>Memiliki 12 rusuk (terdiri dari panjang, lebar, dan tinggi)</li>
+      <li>Memiliki 8 titik sudut</li>
+      <li>Memiliki 12 diagonal sisi dan 4 diagonal ruang</li>
+      <li>Memiliki 6 bidang diagonal berbentuk persegi panjang</li>
+    </ul>
+
+    <div class="example-box">
+      <strong>🔺 3. PRISMA</strong><br>
+      Prisma adalah bangun ruang sisi datar yang memiliki <strong>dua sisi sejajar yang disebut alas dan tutup</strong> berbentuk segi-n, serta sisi-sisi tegak berbentuk persegi panjang.
+    </div>
+    <p><strong>Ciri-ciri Prisma:</strong></p>
+    <ul style="margin-left: 20px; color: #c9c2ad; margin-bottom: 16px;">
+      <li>Memiliki dua sisi alas dan tutup yang sama bentuk dan ukurannya</li>
+      <li>Sisi-sisi tegak berbentuk persegi panjang</li>
+      <li>Memiliki rusuk-rusuk tegak yang sama panjang dan sejajar</li>
+      <li>Penamaan prisma berdasarkan bentuk alasnya (prisma segitiga, prisma segiempat, dst.)</li>
+    </ul>
+
+    <div class="example-box">
+      <strong>🔺 4. LIMAS</strong><br>
+      Limas adalah bangun ruang sisi datar yang memiliki <strong>sebuah sisi alas berbentuk segi-n</strong> dan sisi-sisi tegak berbentuk <strong>segitiga</strong> yang bertemu di satu titik puncak.
+    </div>
+    <p><strong>Ciri-ciri Limas:</strong></p>
+    <ul style="margin-left: 20px; color: #c9c2ad; margin-bottom: 16px;">
+      <li>Memiliki satu sisi alas berbentuk segi-n</li>
+      <li>Memiliki sisi-sisi tegak berbentuk segitiga</li>
+      <li>Memiliki satu titik puncak (apex)</li>
+      <li>Penamaan limas berdasarkan bentuk alasnya (limas segitiga, limas segiempat, dst.)</li>
+    </ul>
+  </section>
+
+  <!-- Section E -->
+  <section class="content-section">
+    <h3 class="section-title">E. Contoh Soal dan Pembahasan</h3>
+    
+    <div class="example-box">
+      <strong>📝 Contoh Soal 1:</strong><br>
+      Sebuah kubus memiliki panjang rusuk 6 cm. Tentukan:<br>
+      a. Jumlah sisi, rusuk, dan titik sudut<br>
+      b. Panjang diagonal sisi<br>
+      c. Panjang diagonal ruang
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p><strong>a.</strong> Berdasarkan tabel, kubus memiliki:</p>
+    <div class="formula-box">
+      Sisi = 6 &nbsp;|&nbsp; Rusuk = 12 &nbsp;|&nbsp; Titik Sudut = 8
+    </div>
+
+    <p><strong>b.</strong> Diagonal sisi kubus (menggunakan teorema Pythagoras pada sisi persegi):</p>
+    <div class="formula-box">
+      ds = s√2 = 6√2 ≈ 8,49 cm
+    </div>
+
+    <p><strong>c.</strong> Diagonal ruang kubus:</p>
+    <div class="formula-box">
+      dr = s√3 = 6√3 ≈ 10,39 cm
+    </div>
+
+    <div class="example-box" style="margin-top: 30px;">
+      <strong>📝 Contoh Soal 2:</strong><br>
+      Sebuah prisma segilima memiliki panjang rusuk alas 4 cm dan tinggi prisma 10 cm. Tentukan jumlah sisi, rusuk, dan titik sudutnya!
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: n = 5 (segi lima), menggunakan rumus prisma segi-n:</p>
+    <div class="formula-box">
+      Sisi = n + 2 = 5 + 2 = 7<br>
+      Rusuk = 3n = 3 × 5 = 15<br>
+      Titik Sudut = 2n = 2 × 5 = 10
+    </div>
+
+    <div class="highlight-box">
+      <h4>✅ Verifikasi dengan Teorema Euler</h4>
+      <p style="margin:0; color: var(--text);">V − E + F = 10 − 15 + 7 = <strong>2</strong> ✓ (Teorema Euler terpenuhi)</p>
+    </div>
+  </section>
+
+  <!-- Section F: Teori & Filosofi -->
+  <section class="content-section">
+    <h3 class="section-title">F. Teori Pendukung: Geometri dalam Peradaban Islam</h3>
+    <p>Geometri bangun ruang memiliki peran penting dalam peradaban Islam, terutama dalam <strong>arsitektur masjid dan istana</strong>. Para arsitek Muslim seperti those who built the Alhambra di Spanyol dan Masjid Cordoba menggunakan prinsip-prinsip geometri untuk menciptakan ornamen yang simetris dan harmonis.</p>
+    <p>Matematikawan Muslim seperti <strong>Abu al-Wafa' al-Buzjani</strong> (940–998 M) menulis karya <em>"Kitab al-Handasa"</em> (Buku Geometri) yang membahas bangun ruang secara sistematis. Kontribusi beliau menjadi jembatan antara geometri Yunani (Euclides) dan geometri modern Eropa.</p>
+    
+    <div class="highlight-box">
+      <h4>🎯 Aplikasi dalam Kehidupan Sehari-hari</h4>
+      <p style="margin:0; color: var(--text);">
+        <strong>1.</strong> <strong>Arsitektur:</strong> Desain bangunan, rumah, dan masjid menggunakan konsep bangun ruang.<br>
+        <strong>2.</strong> <strong>Kemasan:</strong> Kotak makanan, kaleng, dan kardus berbentuk balok atau prisma.<br>
+        <strong>3.</strong> <strong>Seni & Dekorasi:</strong> Ornamen geometris pada batik, ukiran, dan kaligrafi.<br>
+        <strong>4.</strong> <strong>Teknologi:</strong> Desain produk 3D, game, dan animasi menggunakan model bangun ruang.<br>
+        <strong>5.</strong> <strong>Konstruksi:</strong> Perhitungan volume dan luas permukaan untuk material bangunan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Islamic Quote -->
+  <div class="islamic-quote">
+    <div class="arabic">أَفَلَمْ يَنظُرُوا۟ إِلَى ٱلسَّمَآءِ فَوْقَهُمْ كَيْفَ بَنَيْنَٰهَا وَزَيَّنَّٰهَا</div>
+    <div class="translation">"Maka tidakkah mereka memperhatikan langit yang ada di atas mereka, bagaimana Kami membangunnya dan menghiasinya..."</div>
+    <div class="source">— QS. Qaf [50]: 6</div>
+  </div>
+  <p style="text-align: center; color: var(--muted); font-style: italic; margin-top: -20px; margin-bottom: 30px;">
+    Metafora indah untuk geometri: Allah SWT membangun langit dengan struktur yang teratur dan simetris — sebagaimana bangun ruang memiliki unsur-unsur yang tersusun harmonis.
+  </p>
+
+  <!-- Section G: Referensi -->
+  <section class="content-section">
+    <h3 class="section-title">G. Referensi Pendukung</h3>
+    <ul class="reference-list">
+      <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <strong>Matematika Kelas IX SMP/MTs</strong>. Jakarta: Pusat Perbukuan, Balitbang dan Perbukuan, Kemendikbudristek.</li>
+      <li>Subchan, dkk. (2018). <strong>Matematika Kelas IX</strong>. Jakarta: Kementerian Pendidikan dan Kebudayaan.</li>
+      <li>Euclides. (300 SM). <strong>Elements</strong>. (Karya klasik geometri yang menjadi fondasi matematika modern).</li>
+      <li>Abu al-Wafa' al-Buzjani. (998 M). <strong>Kitab al-Handasa</strong> (Book on Geometric Figures). (Karya geometri dari peradaban Islam).</li>
+      <li>Kurikulum Merdeka. (2022). <strong>Capaian Pembelajaran Mata Pelajaran Matematika Fase D</strong>. Jakarta: Kemendikbudristek.</li>
+    </ul>
+  </section>
+
+  <!-- Keywords -->
+  <div class="keywords">
+    <span class="keyword-tag">Bangun Ruang</span>
+    <span class="keyword-tag">Sisi Datar</span>
+    <span class="keyword-tag">Kubus</span>
+    <span class="keyword-tag">Balok</span>
+    <span class="keyword-tag">Prisma</span>
+    <span class="keyword-tag">Limas</span>
+    <span class="keyword-tag">Sisi</span>
+    <span class="keyword-tag">Rusuk</span>
+    <span class="keyword-tag">Titik Sudut</span>
+    <span class="keyword-tag">Diagonal Sisi</span>
+    <span class="keyword-tag">Diagonal Ruang</span>
+    <span class="keyword-tag">Bidang Diagonal</span>
+    <span class="keyword-tag">Teorema Euler</span>
+  </div>
+
+  <!-- ===== UJI FORMATIF ===== -->
+  <div class="quiz-container" id="quizSection">
+    <div class="quiz-header">
+      <h2>📝 Uji Formatif Bab 6</h2>
+      <p>Unsur-unsur Bangun Ruang Sisi Datar<br>
+      📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) | ✍️ Bagian B: Essay (5 soal, 20 poin/soal)</p>
+    </div>
+
+    <form id="quizForm">
+      <!-- Identitas -->
+      <div class="content-section" style="background: rgba(0,0,0,0.2);">
+        <h4 style="color: var(--gold); margin-bottom: 16px; font-family: 'Playfair Display', serif;">📋 Identitas Siswa</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <div class="form-group">
+            <label>Nama Lengkap *</label>
+            <input type="text" id="studentName" required placeholder="Masukkan nama lengkap">
+          </div>
+          <div class="form-group">
+            <label>No. Absen / NIS *</label>
+            <input type="text" id="studentNIS" required placeholder="Masukkan NIS">
+          </div>
+          <div class="form-group">
+            <label>Kelas *</label>
+            <select id="studentClass" required>
+              <option value="">Pilih Kelas</option>
+              <option value="IX-A">IX-A</option>
+              <option value="IX-B">IX-B</option>
+              <option value="IX-C">IX-C</option>
+              <option value="IX-D">IX-D</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tanggal</label>
+            <input type="date" id="quizDate" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian A: Pilihan Ganda -->
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin: 30px 0 20px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 10px;">📋 Bagian A: Pilihan Ganda</h3>
+      <div id="mcqContainer"></div>
+
+      <!-- Bagian B: Essay -->
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 10px;">✍️ Bagian B: Essay</h3>
+      <div id="essayContainer"></div>
+
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadPDF()">📄 UNDUH PDF LENGKAP</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+        <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+        <a id="emailLink" href="#" class="btn btn-outline" style="display:none;">📧 KIRIM KE EMAIL GURU</a>
+      </div>
+    </form>
+
+    <!-- Results Panel -->
+    <div class="results-panel" id="resultsPanel">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 10px;">📊 Hasil Uji Formatif</h3>
+      <p id="resultMessage" style="color: var(--text); margin-bottom: 20px;"></p>
+      <div class="score-display">
+        <div class="score-item">
+          <div class="label">Pilihan Ganda</div>
+          <div class="value" id="scoreMCQ">0</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Essay (Simulasi)</div>
+          <div class="value" id="scoreEssay">0</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Skor Akhir</div>
+          <div class="value" id="scoreTotal">0</div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 16px;">
+        *Penilaian Essay bersifat otomatis berdasarkan kelengkapan jawaban (minimal 30 karakter). Guru akan melakukan penilaian ulang secara manual untuk ketepatan konsep.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">Matematika Kelas IX</div>
+  <div class="footer-contact">
+    MTsN 10 Agam • <a href="mailto:asnimar130370@gmail.com">asnimar130370@gmail.com</a>
+  </div>
+  <div style="width: 100px; height: 1px; background: rgba(212,175,55,0.3); margin: 0 auto 16px;"></div>
+  <div class="copyright">© 2026 Asnimar, S.Pd — Hak Cipta Dilindungi Undang-Undang</div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  document.getElementById('quizDate').valueAsDate = new Date();
+
+  const mcqQuestions = [
+    { q: "Bangun ruang sisi datar adalah bangun ruang yang...", options: ["Memiliki sisi lengkung", "Seluruh sisinya berupa bidang datar", "Hanya memiliki satu sisi", "Tidak memiliki rusuk"], answer: 1 },
+    { q: "Jumlah sisi pada kubus adalah...", options: ["4", "5", "6", "8"], answer: 2 },
+    { q: "Jumlah rusuk pada balok adalah...", options: ["8", "10", "12", "14"], answer: 2 },
+    { q: "Bangun ruang yang memiliki alas berbentuk segi-n dan sisi tegak berbentuk segitiga adalah...", options: ["Prisma", "Limas", "Kubus", "Balok"], answer: 1 },
+    { q: "Teorema Euler untuk bangun ruang sisi datar menyatakan...", options: ["V + E + F = 2", "V − E + F = 2", "V × E × F = 2", "V / E / F = 2"], answer: 1 },
+    { q: "Sebuah prisma segilima memiliki jumlah titik sudut sebanyak...", options: ["5", "8", "10", "12"], answer: 2 },
+    { q: "Diagonal ruang pada kubus dengan rusuk s adalah...", options: ["s√2", "s√3", "2s", "3s"], answer: 1 },
+    { q: "Jumlah sisi pada limas segiempat adalah...", options: ["4", "5", "6", "8"], answer: 1 },
+    { q: "Bangun ruang yang semua rusuknya sama panjang adalah...", options: ["Balok", "Prisma", "Kubus", "Limas"], answer: 2 },
+    { q: "Bidang diagonal pada balok berbentuk...", options: ["Persegi", "Persegi panjang", "Segitiga", "Trapesium"], answer: 1 }
+  ];
+
+  const essayQuestions = [
+    "Jelaskan perbedaan antara bangun ruang sisi datar dan bangun ruang sisi lengkung! Berikan masing-masing dua contoh!",
+    "Sebutkan dan jelaskan enam unsur-unsur bangun ruang! Berikan contoh pada kubus!",
+    "Sebuah prisma segienam memiliki panjang rusuk alas 5 cm dan tinggi 12 cm. Tentukan jumlah sisi, rusuk, dan titik sudutnya! Verifikasi dengan Teorema Euler!",
+    "Jelaskan perbedaan antara prisma dan limas! Sertakan ciri-ciri masing-masing dan contoh dalam kehidupan sehari-hari!",
+    "Mengapa Teorema Euler (V − E + F = 2) penting dalam mempelajari bangun ruang sisi datar? Jelaskan dengan memberikan contoh pembuktian pada kubus!"
+  ];
+
+  const mcqContainer = document.getElementById('mcqContainer');
+  mcqQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-text">
+        <span class="question-num">Soal ${index + 1}</span>
+        <span>${item.q}</span>
+      </div>
+      <div class="options">
+        ${item.options.map((opt, optIndex) => `
+          <label class="option-label" id="label_${index}_${optIndex}">
+            <input type="radio" name="q${index}" value="${optIndex}">
+            <span>${String.fromCharCode(65 + optIndex)}. ${opt}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    mcqContainer.appendChild(qDiv);
+  });
+
+  const essayContainer = document.getElementById('essayContainer');
+  essayQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-text">
+        <span class="question-num">Essay ${index + 1}</span>
+        <span>${item}</span>
+      </div>
+      <textarea id="essay${index}" placeholder="Tulis jawaban Anda di sini... (Minimal 30 karakter untuk mendapatkan poin)"></textarea>
+    `;
+    essayContainer.appendChild(qDiv);
+  });
+
+  let finalScores = { mcq: 0, essay: 0, total: 0 };
+
+  function submitQuiz() {
+    const name = document.getElementById('studentName').value;
+    const nis = document.getElementById('studentNIS').value;
+    const cls = document.getElementById('studentClass').value;
+    
+    if (!name || !nis || !cls) {
+      alert("Harap lengkapi identitas siswa (Nama, NIS, dan Kelas) sebelum mengirim jawaban!");
+      return;
+    }
+
+    let mcqScore = 0;
+    mcqQuestions.forEach((item, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      const labels = document.querySelectorAll(`[id^="label_${index}_"]`);
+      labels.forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'none'; });
+
+      if (selected) {
+        const val = parseInt(selected.value);
+        if (val === item.answer) {
+          mcqScore += 10;
+          document.getElementById(`label_${index}_${val}`).classList.add('correct');
+        } else {
+          document.getElementById(`label_${index}_${val}`).classList.add('incorrect');
+          document.getElementById(`label_${index}_${item.answer}`).classList.add('correct');
+        }
+      } else {
+        document.getElementById(`label_${index}_${item.answer}`).classList.add('correct');
+      }
+    });
+
+    let essayScore = 0;
+    for (let i = 0; i < 5; i++) {
+      const text = document.getElementById(`essay${i}`).value.trim();
+      if (text.length >= 30) essayScore += 20;
+      else if (text.length > 0) essayScore += 10;
+      document.getElementById(`essay${i}`).disabled = true;
+    }
+
+    finalScores = { mcq: mcqScore, essay: essayScore, total: mcqScore + essayScore };
+
+    document.getElementById('scoreMCQ').textContent = finalScores.mcq;
+    document.getElementById('scoreEssay').textContent = finalScores.essay;
+    document.getElementById('scoreTotal').textContent = finalScores.total;
+    
+    let msg = `Terima kasih, ${name}! Jawaban Anda telah berhasil dikumpulkan.`;
+    if (finalScores.total >= 160) msg += " 🌟 Luar biasa! Pemahaman Anda tentang bangun ruang sisi datar sangat baik.";
+    else if (finalScores.total >= 100) msg += " 👍 Bagus! Tingkatkan lagi pemahaman tentang unsur-unsur bangun ruang.";
+    else msg += " 📚 Jangan menyerah! Pelajari kembali materi bangun ruang sisi datar.";
+    
+    document.getElementById('resultMessage').textContent = msg;
+    document.getElementById('resultsPanel').classList.add('show');
+    
+    document.querySelector('.btn-primary').disabled = true;
+    document.querySelector('.btn-primary').textContent = "✓ SUDAH DIKIRIM";
+    document.querySelector('.btn-primary').style.opacity = "0.6";
+
+    const emailBody = `Hasil Uji Formatif Bab 6 (Unsur-unsur Bangun Ruang Sisi Datar)%0D%0A%0D%0ANama: ${name}%0D%0ANIS: ${nis}%0D%0AKelas: ${cls}%0D%0ATanggal: ${document.getElementById('quizDate').value}%0D%0A%0D%0ASKOR:%0D%0A- Pilihan Ganda: ${finalScores.mcq}/100%0D%0A- Essay: ${finalScores.essay}/100 (Perlu validasi guru)%0D%0A- Total: ${finalScores.total}/200%0D%0A%0D%0ACatatan: Jawaban detail dapat dilihat pada file PDF yang dilampirkan.`;
+    document.getElementById('emailLink').href = `mailto:asnimar130370@gmail.com?subject=Hasil Uji Formatif Bab 6 - ${name} (${cls})&body=${emailBody}`;
+    document.getElementById('emailLink').style.display = 'inline-flex';
+
+    document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function downloadPDF() { window.print(); }
+
+  function downloadTXT() {
+    const name = document.getElementById('studentName').value || "Siswa";
+    const nis = document.getElementById('studentNIS').value || "-";
+    const cls = document.getElementById('studentClass').value || "-";
+    const date = document.getElementById('quizDate').value || new Date().toLocaleDateString('id-ID');
+
+    let content = `HASIL UJI FORMATIF BAB 6: UNSUR-UNSUR BANGUN RUANG SISI DATAR\n`;
+    content += `====================================================\n`;
+    content += `Nama  : ${name}\nNIS   : ${nis}\nKelas : ${cls}\nTanggal: ${date}\n`;
+    content += `====================================================\n`;
+    content += `SKOR PILIHAN GANDA : ${finalScores.mcq} / 100\n`;
+    content += `SKOR ESSAY (Simulasi): ${finalScores.essay} / 100\n`;
+    content += `TOTAL SKOR         : ${finalScores.total} / 200\n`;
+    content += `====================================================\n\nJAWABAN ESSAY:\n`;
+    for (let i = 0; i < 5; i++) {
+      content += `\nEssay ${i+1}:\n${document.getElementById(`essay${i}`).value || "(Tidak dijawab)"}\n`;
+    }
+    content += `\n====================================================\nDikirim otomatis dari Sistem Pembelajaran Matematika\nMTsN 10 Agam | Penulis: Asnimar, S.Pd`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Skor_UjiFormatif_Bab6_${name.replace(/\s+/g, '_')}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function resetQuiz() {
+    if (confirm("Apakah Anda yakin ingin mengulang ujian? Semua jawaban akan dihapus.")) {
+      document.getElementById('quizForm').reset();
+      document.getElementById('quizDate').valueAsDate = new Date();
+      document.getElementById('resultsPanel').classList.remove('show');
+      document.querySelectorAll('.option-label').forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'auto'; });
+      document.querySelectorAll('textarea').forEach(t => t.disabled = false);
+      
+      const btn = document.querySelector('.btn-primary');
+      btn.disabled = false; btn.textContent = "✉️ KIRIM JAWABAN & LIHAT HASIL"; btn.style.opacity = "1";
+      document.getElementById('emailLink').style.display = 'none';
+      finalScores = { mcq: 0, essay: 0, total: 0 };
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>
