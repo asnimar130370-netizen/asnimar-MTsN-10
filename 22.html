@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bab 22: Soal Penerapan Bangun Ruang | Matematika Kelas IX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4af37;
+    --gold-soft: #e9c767;
+    --gold-deep: #a8842a;
+    --ink: #0a0e1a;
+    --ink-2: #111729;
+    --ink-3: #1a2138;
+    --text: #e8e4d8;
+    --muted: #a9a28c;
+    --success: #4caf50;
+    --error: #f44336;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: 
+      radial-gradient(1200px 800px at 80% -10%, rgba(212,175,55,.12), transparent 60%),
+      radial-gradient(900px 700px at -10% 30%, rgba(212,175,55,.08), transparent 60%),
+      linear-gradient(180deg, #070912 0%, #0a0e1a 50%, #06080f 100%);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,14,26,0.85);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  .nav-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text); text-decoration: none;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    transition: color 0.3s; display: flex; align-items: center; gap: 6px;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .chapter-header {
+    text-align: center; margin-bottom: 50px;
+    padding-bottom: 30px; border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+  .chapter-header .eyebrow {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .chapter-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px); font-weight: 700;
+    background: linear-gradient(180deg, #fff 0%, var(--gold-soft) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 16px;
+  }
+  .chapter-header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px; color: var(--muted);
+    max-width: 700px; margin: 0 auto 20px;
+  }
+  .author-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 10px 20px; background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 30px;
+    font-size: 13px; color: var(--gold-soft);
+  }
+
+  .intro-quote {
+    text-align: center; padding: 40px 20px; margin-bottom: 50px;
+    background: radial-gradient(circle, rgba(212,175,55,0.05), transparent);
+    border: 1px solid rgba(212,175,55,0.15); border-radius: 12px;
+  }
+  .intro-quote .label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .intro-quote .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; color: var(--gold-soft); margin-bottom: 16px;
+  }
+  .intro-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 17px; color: var(--muted);
+    max-width: 700px; margin: 0 auto;
+  }
+
+  .content-section {
+    margin-bottom: 40px; padding: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+  .content-section:hover {
+    border-color: rgba(212,175,55,0.3);
+    background: rgba(255,255,255,0.03);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; color: var(--gold); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title::before {
+    content: ""; width: 4px; height: 24px; background: var(--gold); border-radius: 2px;
+  }
+  p { margin-bottom: 16px; color: #c9c2ad; }
+  
+  .highlight-box {
+    background: rgba(212,175,55,0.08);
+    border-left: 3px solid var(--gold);
+    padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+  }
+  .highlight-box h4 { color: var(--gold); margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  
+  .formula-box {
+    background: var(--ink-2); border: 1px solid rgba(212,175,55,0.3);
+    padding: 20px; border-radius: 8px; text-align: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 20px;
+    color: var(--gold-soft); margin: 20px 0; font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .example-box {
+    background: rgba(10,14,26,0.6); border: 1px dashed rgba(212,175,55,0.3);
+    padding: 24px; border-radius: 8px; margin: 20px 0;
+  }
+  .example-box strong { color: var(--gold); }
+
+  .challenge-card {
+    padding: 28px; margin: 24px 0;
+    background: linear-gradient(145deg, rgba(212,175,55,0.08), rgba(10,14,26,0.6));
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .challenge-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .challenge-card .badge {
+    display: inline-block; padding: 4px 12px;
+    background: var(--gold); color: var(--ink);
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    border-radius: 12px; font-weight: 700; margin-bottom: 12px;
+  }
+  .challenge-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); font-size: 20px; margin-bottom: 12px;
+  }
+  .challenge-card .difficulty {
+    display: inline-block; padding: 3px 10px;
+    background: rgba(212,175,55,0.15); color: var(--gold);
+    font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+    border-radius: 10px; margin-left: 8px;
+  }
+
+  .shape-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; margin: 24px 0;
+  }
+  .shape-card {
+    padding: 24px; text-align: center;
+    background: linear-gradient(145deg, rgba(26,33,56,0.6), rgba(10,14,26,0.6));
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px;
+    transition: all 0.4s;
+  }
+  .shape-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+  }
+  .shape-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); font-size: 18px; margin-bottom: 8px;
+  }
+  .shape-card p { font-size: 13px; color: var(--muted); margin: 0; }
+  .shape-card .formula {
+    margin-top: 10px; padding: 8px; background: rgba(212,175,55,0.08);
+    border-radius: 6px; font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; color: var(--gold-soft); font-style: italic;
+  }
+
+  .table-wrapper { overflow-x: auto; margin: 20px 0; border-radius: 8px; border: 1px solid rgba(212,175,55,0.15); }
+  .luxury-table {
+    width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02);
+    min-width: 600px;
+  }
+  .luxury-table th {
+    background: rgba(212,175,55,0.15); color: var(--gold);
+    padding: 14px 16px; text-align: center;
+    font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px;
+  }
+  .luxury-table td {
+    padding: 14px 16px; border-bottom: 1px solid rgba(212,175,55,0.08);
+    color: #c9c2ad; font-size: 14px; text-align: center;
+  }
+  .luxury-table td:first-child { text-align: left; font-weight: 600; color: var(--gold-soft); }
+  .luxury-table tr:last-child td { border-bottom: none; }
+  .luxury-table tr:hover td { background: rgba(212,175,55,0.05); }
+
+  .step-box {
+    display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start;
+  }
+  .step-num {
+    background: var(--gold); color: var(--ink);
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-family: 'Playfair Display', serif; flex-shrink: 0;
+  }
+  .step-content h4 { color: var(--gold-soft); margin-bottom: 4px; font-size: 15px; }
+  .step-content p { margin: 0; font-size: 14px; }
+
+  .comparison-box {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0;
+  }
+  .comparison-item {
+    padding: 20px; border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,55,0.15);
+  }
+  .comparison-item h4 {
+    color: var(--gold); font-family: 'Playfair Display', serif;
+    margin-bottom: 10px; font-size: 16px;
+  }
+  .comparison-item p { font-size: 13px; margin: 0; }
+
+  .islamic-quote {
+    text-align: center; padding: 40px 20px; margin: 40px 0;
+    background: radial-gradient(circle, rgba(212,175,55,0.05), transparent);
+    border-top: 1px solid rgba(212,175,55,0.1);
+    border-bottom: 1px solid rgba(212,175,55,0.1);
+  }
+  .islamic-quote .arabic {
+    font-size: 26px; color: var(--gold); margin-bottom: 16px;
+    font-family: 'Traditional Arabic', 'Arial', sans-serif; line-height: 1.6;
+  }
+  .islamic-quote .translation {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto;
+  }
+  .islamic-quote .source {
+    font-size: 12px; color: var(--gold-deep); margin-top: 12px; letter-spacing: 2px;
+  }
+
+  .keywords {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 30px 0;
+  }
+  .keyword-tag {
+    padding: 6px 16px; background: rgba(212,175,55,0.1);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 20px;
+    font-size: 12px; color: var(--gold-soft); letter-spacing: 1px;
+  }
+
+  .reference-list { list-style: none; padding: 0; }
+  .reference-list li {
+    padding: 12px 0; border-bottom: 1px dashed rgba(212,175,55,0.2);
+    color: var(--muted); font-size: 14px; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .reference-list li::before { content: "📚"; flex-shrink: 0; margin-top: 2px; }
+  .reference-list li strong { color: var(--text); }
+
+  .quiz-container {
+    margin-top: 60px; padding: 40px;
+    background: linear-gradient(145deg, rgba(26,33,56,0.8), rgba(10,14,26,0.8));
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .quiz-header { text-align: center; margin-bottom: 30px; }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); }
+  .quiz-header p { color: var(--muted); font-size: 14px; }
+
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 16px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif;
+    font-size: 14px; transition: all 0.3s;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none; border-color: var(--gold); background: rgba(255,255,255,0.08);
+  }
+
+  .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .question-text { font-weight: 500; margin-bottom: 16px; color: #fff; display: flex; gap: 10px; }
+  .question-num { color: var(--gold); font-family: 'Playfair Display', serif; }
+  .question-points {
+    padding: 4px 12px; background: rgba(212,175,55,0.15);
+    border: 1px solid var(--gold); border-radius: 20px;
+    font-size: 11px; color: var(--gold); letter-spacing: 1px;
+    font-weight: 600; white-space: nowrap; margin-left: auto;
+  }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option-label {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .option-label:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3); }
+  .option-label input[type="radio"] { accent-color: var(--gold); width: 18px; height: 18px; }
+  .option-label.correct { background: rgba(76, 175, 80, 0.15); border-color: var(--success); }
+  .option-label.incorrect { background: rgba(244, 67, 54, 0.15); border-color: var(--error); }
+
+  textarea {
+    width: 100%; padding: 16px; min-height: 120px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif;
+    font-size: 14px; resize: vertical; transition: all 0.3s;
+  }
+  textarea:focus { outline: none; border-color: var(--gold); }
+
+  .action-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; justify-content: center; }
+  .btn {
+    padding: 14px 24px; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; border: none; border-radius: 4px;
+    cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600;
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: var(--ink); box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212,175,55,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid rgba(212,175,55,0.3); }
+  .btn-secondary:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+  .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+  .btn-outline:hover { background: rgba(212,175,55,0.1); }
+
+  .results-panel {
+    display: none; margin-top: 30px; padding: 30px;
+    background: rgba(212,175,55,0.05); border: 1px solid var(--gold);
+    border-radius: 12px; text-align: center;
+  }
+  .results-panel.show { display: block; animation: fadeIn 0.5s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  
+  .score-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
+  .score-item { padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px; }
+  .score-item .label { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .score-item .value { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--gold); margin-top: 8px; }
+
+  footer {
+    border-top: 1px solid rgba(212,175,55,0.15);
+    padding: 40px 24px; text-align: center;
+    background: rgba(7,9,18,0.8); margin-top: 60px;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+  .footer-contact { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .footer-contact a { color: var(--gold-soft); text-decoration: none; }
+  .copyright { font-size: 11px; letter-spacing: 2px; color: #6b6555; text-transform: uppercase; }
+
+  @media print {
+    nav, .action-bar, footer { display: none !important; }
+    body { background: #fff; color: #000; }
+    .container { max-width: 100%; padding: 0; }
+    .content-section, .quiz-container, .challenge-card { background: #fff; border: 1px solid #ccc; color: #000; break-inside: avoid; }
+    .section-title, .chapter-header h1 { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+    p, .question-text { color: #000 !important; }
+    .formula-box { background: #f5f5f5; color: #000; border-color: #000; }
+    .luxury-table th { background: #e0e0e0; color: #000; }
+    .luxury-table td { color: #000; border-bottom: 1px solid #ccc; }
+    .shape-card, .comparison-item { background: #f9f9f9; border: 1px solid #ccc; }
+  }
+
+  @media (max-width: 600px) {
+    .score-display { grid-template-columns: 1fr; }
+    .action-bar { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+    .step-box { flex-direction: column; gap: 8px; }
+    .comparison-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="21.html">← Bab 21: Volume Bola</a></li>
+      <li><a href="index.html">📖 Daftar Isi</a></li>
+      <li><a href="23.html">Bab 23: UAS →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+
+  <!-- Chapter Header -->
+  <header class="chapter-header">
+    <div class="eyebrow">Pertemuan 22 • Matematika Kelas IX Semester 1</div>
+    <h1>Soal Penerapan Bangun Ruang</h1>
+    <p class="subtitle">— Mengintegrasikan seluruh konsep bangun ruang sisi datar dan sisi lengkung dalam masalah nyata kehidupan —</p>
+    <div class="author-badge">
+      <span>👤 Asnimar, S.Pd</span>
+      <span>•</span>
+      <span>MTsN 10 Agam</span>
+    </div>
+  </header>
+
+  <!-- Intro Quote -->
+  <div class="intro-quote">
+    <div class="label">◆ — Bab Dua Puluh Dua — ◆</div>
+    <div class="title">Soal Penerapan Bangun Ruang</div>
+    <p>Bab ini adalah puncak dari perjalanan geometri kita. Setelah mempelajari seluruh bangun ruang sisi datar (kubus, balok, prisma, limas) dan bangun ruang sisi lengkung (tabung, kerucut, bola) pada pertemuan 6–21, kini saatnya kita mengintegrasikan seluruh pengetahuan tersebut untuk memecahkan masalah nyata yang kompleks — dari arsitektur masjid hingga industri kemasan, dari tangki penyimpanan hingga bola dunia.</p>
+  </div>
+
+  <!-- Section A -->
+  <section class="content-section">
+    <h3 class="section-title">A. Tujuan Pembelajaran Bab Ini</h3>
+    <p>Bab ini tidak memperkenalkan konsep baru, melainkan <strong>mengintegrasikan</strong> seluruh konsep yang telah dipelajari untuk menyelesaikan masalah kontekstual yang autentik. Ini adalah puncak dari taksonomi Bloom — tingkat <em>aplikasi</em> dan <em>analisis</em>.</p>
+    
+    <div class="highlight-box">
+      <h4>🎯 Capaian Pembelajaran</h4>
+      <p style="margin:0; color: var(--text);">
+        Setelah mempelajari bab ini, siswa diharapkan mampu:<br><br>
+        <strong>1.</strong> <strong>Mengidentifikasi</strong> bangun ruang dalam masalah kontekstual (arsitektur, industri, olahraga, dll.).<br>
+        <strong>2.</strong> <strong>Menerapkan</strong> rumus luas permukaan dan volume untuk menyelesaikan masalah nyata.<br>
+        <strong>3.</strong> <strong>Menganalisis</strong> masalah yang melibatkan kombinasi beberapa bangun ruang.<br>
+        <strong>4.</strong> <strong>Menghitung</strong> biaya, konversi satuan, dan perbandingan dalam konteks nyata.<br>
+        <strong>5.</strong> <strong>Merancang</strong> solusi kreatif untuk masalah desain dan optimasi.<br>
+        <strong>6.</strong> <strong>Menghubungkan</strong> matematika dengan kehidupan sehari-hari, arsitektur Islam, dan sains.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>💡 Mengapa Bab Ini Penting?</h4>
+      <p style="margin:0; color: var(--text);">
+        Matematika tanpa aplikasi hanyalah angka di atas kertas. Bab ini menunjukkan bahwa <strong>matematika adalah bahasa alam semesta</strong> — dari bentuk kubah masjid yang simetris, hingga tangki LPG yang menahan tekanan, hingga bola dunia yang menggambarkan planet kita. Setiap perhitungan yang Anda lakukan di bab ini memiliki makna nyata dalam kehidupan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section B -->
+  <section class="content-section">
+    <h3 class="section-title">B. Rangkuman Rumus Seluruh Bangun Ruang</h3>
+    <p>Sebelum menyelesaikan soal penerapan, mari kita rangkum seluruh rumus penting dari 8 bangun ruang yang telah dipelajari:</p>
+    
+    <div class="shape-grid">
+      <div class="shape-card">
+        <h4>🎲 Kubus</h4>
+        <p>Rusuk = s</p>
+        <div class="formula">L = 6s² &nbsp;|&nbsp; V = s³</div>
+      </div>
+      <div class="shape-card">
+        <h4>📦 Balok</h4>
+        <p>p, l, t</p>
+        <div class="formula">L = 2(pl+pt+lt) &nbsp;|&nbsp; V = p×l×t</div>
+      </div>
+      <div class="shape-card">
+        <h4>🔷 Prisma</h4>
+        <p>Alas segi-n, tinggi t</p>
+        <div class="formula">L = 2La + Ka×t &nbsp;|&nbsp; V = La×t</div>
+      </div>
+      <div class="shape-card">
+        <h4>🔺 Limas</h4>
+        <p>Alas segi-n, tinggi t</p>
+        <div class="formula">L = La + n×L△ &nbsp;|&nbsp; V = ⅓×La×t</div>
+      </div>
+      <div class="shape-card">
+        <h4>🔵 Tabung</h4>
+        <p>Jari-jari r, tinggi t</p>
+        <div class="formula">L = 2πr(r+t) &nbsp;|&nbsp; V = πr²t</div>
+      </div>
+      <div class="shape-card">
+        <h4>🍦 Kerucut</h4>
+        <p>Jari-jari r, garis pelukis s</p>
+        <div class="formula">L = πr(r+s) &nbsp;|&nbsp; V = ⅓πr²t</div>
+      </div>
+      <div class="shape-card">
+        <h4>🌐 Bola</h4>
+        <p>Jari-jari r</p>
+        <div class="formula">L = 4πr² &nbsp;|&nbsp; V = 4/3 πr³</div>
+      </div>
+      <div class="shape-card">
+        <h4>🌙 Setengah Bola</h4>
+        <p>Jari-jari r</p>
+        <div class="formula">L = 2πr² &nbsp;|&nbsp; V = 2/3 πr³</div>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="luxury-table">
+        <thead>
+          <tr>
+            <th>Bangun Ruang</th>
+            <th>Kategori</th>
+            <th>Luas Permukaan</th>
+            <th>Volume</th>
+            <th>Unsur Kunci</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kubus</td>
+            <td>Sisi Datar</td>
+            <td>6s²</td>
+            <td>s³</td>
+            <td>Rusuk (s)</td>
+          </tr>
+          <tr>
+            <td>Balok</td>
+            <td>Sisi Datar</td>
+            <td>2(pl+pt+lt)</td>
+            <td>p × l × t</td>
+            <td>p, l, t</td>
+          </tr>
+          <tr>
+            <td>Prisma</td>
+            <td>Sisi Datar</td>
+            <td>2La + Ka × t</td>
+            <td>La × t</td>
+            <td>La, Ka, t</td>
+          </tr>
+          <tr>
+            <td>Limas</td>
+            <td>Sisi Datar</td>
+            <td>La + n × L△</td>
+            <td>⅓ × La × t</td>
+            <td>La, t, L△</td>
+          </tr>
+          <tr>
+            <td>Tabung</td>
+            <td>Sisi Lengkung</td>
+            <td>2πr(r + t)</td>
+            <td>πr²t</td>
+            <td>r, t</td>
+          </tr>
+          <tr>
+            <td>Kerucut</td>
+            <td>Sisi Lengkung</td>
+            <td>πr(r + s)</td>
+            <td>⅓ πr²t</td>
+            <td>r, t, s</td>
+          </tr>
+          <tr>
+            <td>Bola</td>
+            <td>Sisi Lengkung</td>
+            <td>4πr²</td>
+            <td>4/3 πr³</td>
+            <td>r</td>
+          </tr>
+          <tr>
+            <td>Setengah Bola</td>
+            <td>Sisi Lengkung</td>
+            <td>2πr² (tanpa alas)</td>
+            <td>2/3 πr³</td>
+            <td>r</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🔑 Pola Penting</h4>
+      <p style="margin:0; color: var(--text);">
+        • <strong>Volume limas & kerucut</strong> = ⅓ × (luas alas × tinggi) — selalu ada faktor ⅓.<br>
+        • <strong>Volume prisma & tabung</strong> = luas alas × tinggi — tanpa faktor.<br>
+        • <strong>Volume bola</strong> = 4/3 πr³ — faktor 4/3.<br>
+        • <strong>Luas permukaan limas</strong> = La + selimut (1 alas).<br>
+        • <strong>Luas permukaan prisma</strong> = 2La + selimut (2 alas).<br>
+        • <strong>Hubungan Archimedes</strong>: V bola = ⅔ × V tabung (dengan alas & tinggi sama).
+      </p>
+    </div>
+  </section>
+
+  <!-- Section C -->
+  <section class="content-section">
+    <h3 class="section-title">C. Strategi Pemecahan Masalah (Metode Polya)</h3>
+    <p>Untuk menyelesaikan soal penerapan yang kompleks, kita menggunakan <strong>4 Langkah Polya</strong> — strategi pemecahan masalah yang dirumuskan oleh matematikawan George Polya:</p>
+    
+    <div class="highlight-box">
+      <h4>🎯 4 Langkah Polya</h4>
+      <p style="margin:0; color: var(--text);">
+        <strong>1. Memahami Masalah:</strong> Baca soal dengan teliti. Identifikasi apa yang diketahui dan apa yang ditanya. Gambar sketsa jika perlu. Tentukan bangun ruang yang terlibat.<br><br>
+        <strong>2. Merencanakan Penyelesaian:</strong> Pilih rumus yang tepat. Identifikasi apakah soal meminta luas permukaan atau volume. Perhatikan kata kunci seperti "tanpa alas", "setengah bola", "kombinasi", "biaya", dll.<br><br>
+        <strong>3. Melaksanakan Rencana:</strong> Lakukan perhitungan dengan teliti. Samakan satuan sebelum menghitung. Perhatikan konversi (cm³ → liter, m² → biaya).<br><br>
+        <strong>4. Melihat Kembali:</strong> Periksa jawaban. Apakah masuk akal? Apakah satuan sudah benar? Verifikasi dengan cara lain jika mungkin.
+      </p>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="luxury-table">
+        <thead>
+          <tr>
+            <th>Kata Kunci dalam Soal</th>
+            <th>Arti</th>
+            <th>Rumus yang Digunakan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"Berapa banyak air/minyak/gas yang dapat ditampung"</td>
+            <td>Volume</td>
+            <td>V = ...</td>
+          </tr>
+          <tr>
+            <td>"Berapa bahan/cat/kertas yang dibutuhkan"</td>
+            <td>Luas permukaan</td>
+            <td>L = ...</td>
+          </tr>
+          <tr>
+            <td>"Biaya pengecatan/pembuatan"</td>
+            <td>Luas permukaan × harga per m²</td>
+            <td>L × harga</td>
+          </tr>
+          <tr>
+            <td>"Tanpa alas" / "terbuka atas" / "kubah"</td>
+            <td>Kurangi luas alas</td>
+            <td>L total − La</td>
+          </tr>
+          <tr>
+            <td>"Setengah bola" / "hemisfer"</td>
+            <td>Gunakan rumus setengah</td>
+            <td>L = 2πr², V = 2/3 πr³</td>
+          </tr>
+          <tr>
+            <td>"Berapa liter"</td>
+            <td>Konversi volume</td>
+            <td>1 liter = 1.000 cm³ = 1 dm³</td>
+          </tr>
+          <tr>
+            <td>"Terdiri dari beberapa bagian"</td>
+            <td>Kombinasi bangun ruang</td>
+            <td>V total = V₁ + V₂ + ...</td>
+          </tr>
+          <tr>
+            <td>"Perbandingan"</td>
+            <td>Rasio</td>
+            <td>L₁/L₂ = (r₁/r₂)² atau V₁/V₂ = (r₁/r₂)³</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section D -->
+  <section class="content-section">
+    <h3 class="section-title">D. Soal Penerapan Bangun Ruang Sisi Datar</h3>
+    <p>Mari kita mulai dengan soal-soal yang melibatkan kubus, balok, prisma, dan limas:</p>
+    
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 1</div>
+      <span class="difficulty">Menengah</span>
+      <h4>Kolam Renang — Balok</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah kolam renang berbentuk balok memiliki panjang 25 m, lebar 10 m, dan kedalaman 2 m. Jika kolam diisi air hingga ketinggian 1,8 m, hitunglah:<br>
+        a. Volume air dalam kolam (dalam liter)<br>
+        b. Luas keramik yang dibutuhkan untuk melapisi dasar dan dinding kolam<br>
+        c. Biaya pengisian air jika harga air Rp5.000 per m³
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Air</h4>
+        <p>V = p × l × t_air = 25 × 10 × 1,8 = 450 m³<br>
+        = 450 × 1.000 = <strong style="color:var(--gold)">450.000 liter</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Keramik (dasar + 4 dinding, tanpa atas)</h4>
+        <p>• Dasar: 25 × 10 = 250 m²<br>
+        • 2 dinding panjang: 2 × (25 × 2) = 100 m²<br>
+        • 2 dinding lebar: 2 × (10 × 2) = 40 m²<br>
+        • Total = 250 + 100 + 40 = <strong style="color:var(--gold)">390 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">c</div>
+      <div class="step-content">
+        <h4>Biaya Pengisian Air</h4>
+        <p>Biaya = 450 m³ × Rp5.000 = <strong style="color:var(--gold)">Rp2.250.000</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 2</div>
+      <span class="difficulty">Menengah</span>
+      <h4>Tenda Camping — Prisma Segitiga</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah tenda berbentuk prisma segitiga memiliki alas segitiga dengan alas 3 m dan tinggi segitiga 2 m. Panjang tenda 4 m. Hitunglah:<br>
+        a. Volume udara dalam tenda<br>
+        b. Luas kain yang dibutuhkan (tanpa alas)
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Tenda</h4>
+        <p>La = ½ × 3 × 2 = 3 m²<br>
+        V = La × t = 3 × 4 = <strong style="color:var(--gold)">12 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Kain (hanya selimut, tanpa alas)</h4>
+        <p>• 2 sisi segitiga (depan-belakang): 2 × 3 = 6 m²<br>
+        • Sisi miring kiri-kanan (persegi panjang):<br>
+        &nbsp;&nbsp;Panjang sisi miring = √(1,5² + 2²) = √(2,25 + 4) = √6,25 = 2,5 m<br>
+        &nbsp;&nbsp;Luas 2 sisi miring = 2 × (2,5 × 4) = 20 m²<br>
+        • Total = 6 + 20 = <strong style="color:var(--gold)">26 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 3</div>
+      <span class="difficulty">Menengah</span>
+      <h4>Biaya Pengecatan Ruangan — Balok</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah ruangan berbentuk balok berukuran 6 m × 5 m × 3 m akan dicat. Jika biaya cat Rp50.000/m² dan hanya dinding + langit-langit yang dicat (lantai tidak), berapa total biaya pengecatan?
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Luas yang Dicat (4 dinding + langit-langit)</h4>
+        <p>• 2 dinding panjang: 2 × (6 × 3) = 36 m²<br>
+        • 2 dinding lebar: 2 × (5 × 3) = 30 m²<br>
+        • Langit-langit: 6 × 5 = 30 m²<br>
+        • Total = 36 + 30 + 30 = <strong style="color:var(--gold)">96 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Total Biaya</h4>
+        <p>Biaya = 96 × 50.000 = <strong style="color:var(--gold)">Rp4.800.000</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 4</div>
+      <span class="difficulty">Sulit</span>
+      <h4>Gudang — Kombinasi Balok + Limas</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah gudang memiliki bagian bawah berbentuk balok (10 m × 8 m × 4 m) dan atap berbentuk limas segiempat dengan alas 10 m × 8 m dan tinggi limas 3 m. Hitunglah:<br>
+        a. Volume total gudang<br>
+        b. Luas atap limas (hanya selimut)
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">a1</div>
+      <div class="step-content">
+        <h4>Volume Balok (Badan Gudang)</h4>
+        <p>V₁ = 10 × 8 × 4 = <strong style="color:var(--gold)">320 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">a2</div>
+      <div class="step-content">
+        <h4>Volume Limas (Atap)</h4>
+        <p>V₂ = ⅓ × (10 × 8) × 3 = ⅓ × 240 = <strong style="color:var(--gold)">80 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">a3</div>
+      <div class="step-content">
+        <h4>Volume Total</h4>
+        <p>V = 320 + 80 = <strong style="color:var(--gold)">400 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Atap Limas (selimut saja)</h4>
+        <p>Perlu mencari garis pelukis (s) untuk setiap segitiga:<br>
+        • Untuk sisi panjang (10 m): setengah alas = 5 m<br>
+        &nbsp;&nbsp;s₁ = √(5² + 3²) = √(25 + 9) = √34 ≈ 5,83 m<br>
+        &nbsp;&nbsp;Luas 2 segitiga panjang = 2 × (½ × 10 × 5,83) = 58,3 m²<br>
+        • Untuk sisi lebar (8 m): setengah alas = 4 m<br>
+        &nbsp;&nbsp;s₂ = √(4² + 3²) = √(16 + 9) = √25 = 5 m<br>
+        &nbsp;&nbsp;Luas 2 segitiga lebar = 2 × (½ × 8 × 5) = 40 m²<br>
+        • Total luas atap = 58,3 + 40 = <strong style="color:var(--gold)">98,3 m²</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section E -->
+  <section class="content-section">
+    <h3 class="section-title">E. Soal Penerapan Bangun Ruang Sisi Lengkung</h3>
+    <p>Sekarang kita beralih ke soal-soal yang melibatkan tabung, kerucut, dan bola:</p>
+    
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 5</div>
+      <span class="difficulty">Menengah</span>
+      <h4>Tangki Air — Tabung</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah tangki air berbentuk tabung memiliki jari-jari 70 cm dan tinggi 150 cm. Hitunglah:<br>
+        a. Volume tangki (dalam liter)<br>
+        b. Luas bahan logam yang dibutuhkan untuk membuat tangki tertutup<br>
+        c. Biaya pembuatan jika harga logam Rp100.000/m²
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Tangki</h4>
+        <p>V = πr²t = (22/7) × 70² × 150<br>
+        V = (22/7) × 4.900 × 150<br>
+        V = 22 × 700 × 150 = 2.310.000 cm³<br>
+        = <strong style="color:var(--gold)">2.310 liter</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Permukaan Tangki Tertutup</h4>
+        <p>L = 2πr(r + t) = 2 × (22/7) × 70 × (70 + 150)<br>
+        L = 2 × 22 × 10 × 220 = <strong style="color:var(--gold)">96.800 cm² = 9,68 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">c</div>
+      <div class="step-content">
+        <h4>Biaya Pembuatan</h4>
+        <p>Biaya = 9,68 × 100.000 = <strong style="color:var(--gold)">Rp968.000</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 6</div>
+      <span class="difficulty">Menengah</span>
+      <h4>Cone Es Krim — Kerucut</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah cone es krim berbentuk kerucut memiliki diameter 8 cm dan tinggi 12 cm. Hitunglah:<br>
+        a. Volume es krim yang dapat ditampung (dalam ml)<br>
+        b. Luas wafel untuk membuat 100 cone
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: d = 8 cm → r = 4 cm, t = 12 cm</p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Es Krim</h4>
+        <p>V = ⅓ × πr²t = ⅓ × 3,14 × 4² × 12<br>
+        V = ⅓ × 3,14 × 16 × 12<br>
+        V = ⅓ × 602,88 = 200,96 cm³<br>
+        = <strong style="color:var(--gold)">200,96 ml ≈ 201 ml</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Wafel untuk 100 Cone (selimut saja)</h4>
+        <p>Cari garis pelukis: s = √(r² + t²) = √(4² + 12²) = √(16 + 144) = √160 ≈ 12,65 cm<br>
+        Luas selimut 1 cone = πrs = 3,14 × 4 × 12,65 ≈ 158,96 cm²<br>
+        Luas 100 cone = 100 × 158,96 = <strong style="color:var(--gold)">15.896 cm² ≈ 1,59 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 7</div>
+      <span class="difficulty">Menengah</span>
+      <h4>Kubah Masjid — Setengah Bola</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah kubah masjid berbentuk setengah bola (hemisfer) dengan diameter 14 m. Hitunglah:<br>
+        a. Luas bahan cat yang dibutuhkan untuk mengecat bagian luar kubah<br>
+        b. Volume udara di dalam kubah<br>
+        c. Jumlah kaleng cat yang dibutuhkan jika 1 kaleng dapat menutupi 20 m²
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: d = 14 m → r = 7 m</p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Luas Kubah (setengah bola tanpa alas)</h4>
+        <p>L = 2πr² = 2 × (22/7) × 7²<br>
+        L = 2 × 22 × 7 = <strong style="color:var(--gold)">308 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Volume Udara dalam Kubah</h4>
+        <p>V = 2/3 × πr³ = 2/3 × (22/7) × 7³<br>
+        V = 2/3 × 22 × 49 = 2/3 × 1.078<br>
+        V ≈ <strong style="color:var(--gold)">718,67 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">c</div>
+      <div class="step-content">
+        <h4>Jumlah Kaleng Cat</h4>
+        <p>308 / 20 = 15,4 → dibulatkan ke atas = <strong style="color:var(--gold)">16 kaleng</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 8</div>
+      <span class="difficulty">Sulit</span>
+      <h4>Tangki LPG — Bola</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah tangki penyimpanan gas LPG berbentuk bola penuh memiliki diameter 6 m. Hitunglah:<br>
+        a. Volume gas yang dapat ditampung (dalam liter)<br>
+        b. Luas permukaan tangki<br>
+        c. Biaya pengecatan jika harga cat Rp75.000/m²
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: d = 6 m → r = 3 m</p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Tangki</h4>
+        <p>V = 4/3 × πr³ = 4/3 × 3,14 × 3³<br>
+        V = 4/3 × 3,14 × 27 = 4 × 3,14 × 9<br>
+        V = 113,04 m³ = <strong style="color:var(--gold)">113.040 liter</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Permukaan</h4>
+        <p>L = 4πr² = 4 × 3,14 × 3² = 4 × 3,14 × 9<br>
+        L = <strong style="color:var(--gold)">113,04 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">c</div>
+      <div class="step-content">
+        <h4>Biaya Pengecatan</h4>
+        <p>Biaya = 113,04 × 75.000 = <strong style="color:var(--gold)">Rp8.478.000</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section F -->
+  <section class="content-section">
+    <h3 class="section-title">F. Soal Kombinasi & Kontekstual Kompleks</h3>
+    <p>Soal-soal berikut menggabungkan beberapa bangun ruang dan konsep sekaligus:</p>
+    
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 9</div>
+      <span class="difficulty">Sulit</span>
+      <h4>Tugu Peringatan — Kombinasi Balok + Limas</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah tugu terdiri dari dua bagian: bagian bawah berbentuk balok (2 m × 2 m × 5 m) dan bagian atas berbentuk limas segiempat dengan alas 2 m × 2 m dan tinggi 3 m. Hitunglah:<br>
+        a. Volume total tugu<br>
+        b. Luas permukaan tugu (tanpa alas bawah) untuk keperluan pengecatan
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">a1</div>
+      <div class="step-content">
+        <h4>Volume Balok</h4>
+        <p>V₁ = 2 × 2 × 5 = <strong style="color:var(--gold)">20 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">a2</div>
+      <div class="step-content">
+        <h4>Volume Limas</h4>
+        <p>V₂ = ⅓ × (2 × 2) × 3 = ⅓ × 12 = <strong style="color:var(--gold)">4 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">a3</div>
+      <div class="step-content">
+        <h4>Volume Total</h4>
+        <p>V = 20 + 4 = <strong style="color:var(--gold)">24 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Luas Permukaan (tanpa alas bawah)</h4>
+        <p>• 4 sisi tegak balok: 4 × (2 × 5) = 40 m²<br>
+        • Sisi atas balok (alas limas): 2 × 2 = 4 m²<br>
+        • 4 sisi tegak limas: perlu garis pelukis<br>
+        &nbsp;&nbsp;s = √(1² + 3²) = √10 ≈ 3,16 m<br>
+        &nbsp;&nbsp;Luas 1 segitiga = ½ × 2 × 3,16 = 3,16 m²<br>
+        &nbsp;&nbsp;Luas 4 segitiga = 4 × 3,16 = 12,64 m²<br>
+        • Total LP = 40 + 4 + 12,64 = <strong style="color:var(--gold)">56,64 m²</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 10</div>
+      <span class="difficulty">Sulit</span>
+      <h4>Piramida Giza — Aplikasi Sejarah</h4>
+      <p style="color: #c9c2ad;">
+        Piramida Agung Giza memiliki alas persegi dengan sisi 230 m dan tinggi 146 m. Hitunglah:<br>
+        a. Volume piramida<br>
+        b. Jika setiap balok batu berukuran 1 m × 1 m × 1 m, perkirakan jumlah balok yang digunakan!
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Piramida</h4>
+        <p>V = ⅓ × La × t = ⅓ × (230 × 230) × 146<br>
+        V = ⅓ × 52.900 × 146 = ⅓ × 7.723.400<br>
+        V ≈ <strong style="color:var(--gold)">2.574.467 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Perkiraan Jumlah Balok</h4>
+        <p>Volume 1 balok = 1 m³<br>
+        Jumlah balok ≈ 2.574.467 / 1 = <strong style="color:var(--gold)">± 2,57 juta balok</strong><br><br>
+        <em>Catatan sejarah: Para arkeolog memperkirakan sekitar 2,3 juta balok digunakan — sangat dekat dengan perhitungan matematis kita!</em></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 11</div>
+      <span class="difficulty">Sulit</span>
+      <h4>Monumen Nasional (Monas) — Arsitektur Indonesia</h4>
+      <p style="color: #c9c2ad;">
+        Badan Monas berbentuk limas segiempat dengan alas 17 m × 17 m dan tinggi 17 m (filosofi 17-8-1945). Di atasnya terdapat puncak berbentuk kerucut dengan jari-jari alas 2 m dan tinggi 6 m, serta lidah api berlapis emas.<br>
+        Hitunglah volume total badan Monas + puncak kerucut!
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Volume Badan Limas</h4>
+        <p>V₁ = ⅓ × (17 × 17) × 17 = ⅓ × 289 × 17<br>
+        V₁ = ⅓ × 4.913 ≈ <strong style="color:var(--gold)">1.637,67 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Volume Puncak Kerucut</h4>
+        <p>V₂ = ⅓ × πr²t = ⅓ × 3,14 × 2² × 6<br>
+        V₂ = ⅓ × 3,14 × 4 × 6 = ⅓ × 75,36<br>
+        V₂ ≈ <strong style="color:var(--gold)">25,12 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Volume Total</h4>
+        <p>V = 1.637,67 + 25,12 = <strong style="color:var(--gold)">1.662,79 m³</strong></p>
+      </div>
+    </div>
+
+    <div class="challenge-card">
+      <div class="badge">📝 Soal 12</div>
+      <span class="difficulty">Sulit</span>
+      <h4>Perbandingan Volume — Bola & Tabung</h4>
+      <p style="color: #c9c2ad;">
+        Sebuah bola dimasukkan ke dalam tabung sedemikian sehingga bola tepat menyentuh alas, tutup, dan selimut tabung. Jika jari-jari tabung 10 cm, hitunglah:<br>
+        a. Volume tabung<br>
+        b. Volume bola<br>
+        c. Perbandingan volume bola dan volume tabung<br>
+        d. Volume ruang kosong di antara bola dan tabung
+      </p>
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: r tabung = r bola = 10 cm, tinggi tabung = 2r = 20 cm</p>
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Volume Tabung</h4>
+        <p>V tabung = πr² × t = 3,14 × 10² × 20<br>
+        V tabung = 3,14 × 100 × 20 = <strong style="color:var(--gold)">6.280 cm³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Volume Bola</h4>
+        <p>V bola = 4/3 × πr³ = 4/3 × 3,14 × 10³<br>
+        V bola = 4/3 × 3,14 × 1.000<br>
+        V bola ≈ <strong style="color:var(--gold)">4.186,67 cm³</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">c</div>
+      <div class="step-content">
+        <h4>Perbandingan</h4>
+        <p>V bola / V tabung = 4.186,67 / 6.280 = <strong style="color:var(--gold)">⅔</strong><br>
+        <em>Terbukti: Teorema Archimedes — V bola = ⅔ × V tabung</em></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">d</div>
+      <div class="step-content">
+        <h4>Volume Ruang Kosong</h4>
+        <p>V kosong = V tabung − V bola<br>
+        V kosong = 6.280 − 4.186,67 = <strong style="color:var(--gold)">2.093,33 cm³</strong><br>
+        <em>Atau: ⅓ × V tabung = ⅓ × 6.280 = 2.093,33 cm³ ✓</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section G -->
+  <section class="content-section">
+    <h3 class="section-title">G. Tips Praktis & Kesalahan Umum</h3>
+    
+    <div class="highlight-box">
+      <h4>🎯 Strategi Sukses Mengerjakan Soal Penerapan</h4>
+      <p style="margin:0; color: var(--text);">
+        <strong>1. Baca soal 2 kali:</strong> Pertama untuk memahami, kedua untuk menangkap detail.<br>
+        <strong>2. Identifikasi bangun ruang:</strong> Tentukan jenis bangun yang terlibat (tunggal atau kombinasi).<br>
+        <strong>3. Gambar sketsa:</strong> Sketsa sederhana sangat membantu memahami masalah 3D.<br>
+        <strong>4. Tulis apa yang diketahui dan ditanya:</strong> Organisasi informasi sebelum menghitung.<br>
+        <strong>5. Samakan satuan:</strong> Konversi semua ukuran ke satuan yang sama sebelum menghitung.<br>
+        <strong>6. Pilih rumus yang tepat:</strong> Perhatikan kata kunci (luas/volume, dengan/tanpa alas, dll.).<br>
+        <strong>7. Periksa jawaban:</strong> Apakah masuk akal secara fisik? Apakah satuan sudah benar?<br>
+        <strong>8. Untuk kombinasi bangun:</strong> Hitung masing-masing bagian, lalu jumlahkan/kurangkan sesuai kebutuhan.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>⚠️ Kesalahan Umum yang Harus Dihindari</h4>
+      <p style="margin:0; color: var(--text);">
+        • <strong>Tidak membaca soal dengan teliti</strong> — sering ada kata kunci seperti "tanpa alas", "setengah bola", "kombinasi" yang mengubah rumus.<br>
+        • <strong>Satuan tidak seragam</strong> — cm dicampur dengan m, atau cm³ tidak dikonversi ke liter.<br>
+        • <strong>Lupa faktor ⅓ pada limas/kerucut</strong> — volume limas BUKAN La × t, melainkan ⅓ × La × t.<br>
+        • <strong>Tidak menggambar sketsa</strong> — sketsa sangat membantu memahami masalah 3D.<br>
+        • <strong>Tidak memeriksa masuk-tidaknya jawaban</strong> — jika volume kolam renang hanya 1 liter, pasti ada kesalahan!<br>
+        • <strong>Keliru pada kombinasi bangun</strong> — pastikan tidak ada bagian yang dihitung dua kali atau terlewat.<br>
+        • <strong>Salah mengartikan "setengah bola"</strong> — kubah = setengah bola tanpa alas, gunakan L = 2πr² dan V = 2/3 πr³.<br>
+        • <strong>Lupa konversi satuan akhir</strong> — misalnya diminta dalam liter tapi jawaban dalam cm³.
+      </p>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="luxury-table">
+        <thead>
+          <tr>
+            <th>Konversi Satuan Penting</th>
+            <th>Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 liter</td>
+            <td>= 1 dm³ = 1.000 cm³</td>
+          </tr>
+          <tr>
+            <td>1 m³</td>
+            <td>= 1.000 liter = 1.000.000 cm³</td>
+          </tr>
+          <tr>
+            <td>1 cm³</td>
+            <td>= 1 ml (mililiter)</td>
+          </tr>
+          <tr>
+            <td>1 m²</td>
+            <td>= 10.000 cm²</td>
+          </tr>
+          <tr>
+            <td>1 km³</td>
+            <td>= 10⁹ m³ = 1 miliar m³</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section H: Refleksi & Kutipan Islami -->
+  <section class="content-section">
+    <h3 class="section-title">H. Refleksi: Matematika dalam Arsitektur Islam</h3>
+    <p>Seluruh soal penerapan di bab ini memiliki satu benang merah: <strong>matematika adalah bahasa universal</strong> yang memungkinkan manusia membangun peradaban. Dalam arsitektur Islam, penggunaan bangun ruang sangat menonjol:</p>
+    
+    <div class="highlight-box">
+      <h4>🕌 Bangun Ruang dalam Arsitektur Islam</h4>
+      <p style="margin:0; color: var(--text);">
+        • <strong>Kubah (setengah bola)</strong>: Ciri khas masjid, dari Masjid Nabawi hingga Masjid Istiqlal. Bentuk ini mendistribusikan beban secara merata dan memantulkan suara azan dengan indah.<br>
+        • <strong>Menara (tabung)</strong>: Tempat muazin mengumandangkan azan. Bentuk silinder memberikan stabilitas struktural.<br>
+        • <strong>Atap tumpang tiga (limas)</strong>: Ciri khas masjid Jawa kuno seperti Masjid Demak, melambangkan tiga tingkatan spiritual.<br>
+        • <strong>Ornamen geometris (prisma & limas)</strong>: Pola bintang dan poligon yang menghiasi dinding masjid, mencerminkan kesempurnaan ciptaan Allah.<br>
+        • <strong>Mihrab (setengah silinder)</strong>: Ceruk yang menunjukkan arah kiblat, sering dihiasi ornamen geometris.
+      </p>
+    </div>
+
+    <p>Setiap perhitungan yang kita lakukan di bab ini — dari volume kubah hingga luas permukaan tangki — adalah refleksi kecil dari kesempurnaan matematika yang Allah tanamkan dalam alam semesta.</p>
+  </section>
+
+  <!-- Islamic Quote -->
+  <div class="islamic-quote">
+    <div class="arabic">صُنْعَ اللَّهِ الَّذِي أَتْقَنَ كُلَّ شَيْءٍ</div>
+    <div class="translation">"(Begitulah) perbuatan Allah yang membuat dengan sempurna segala sesuatu..."</div>
+    <div class="source">— QS. An-Naml [27]: 88</div>
+  </div>
+  <p style="text-align: center; color: var(--muted); font-style: italic; margin-top: -20px; margin-bottom: 30px;">
+    Metafora indah untuk penerapan bangun ruang: Allah menciptakan segala sesuatu dengan kesempurnaan — dari bentuk bola planet hingga struktur piramida, dari kubah masjid hingga sarang lebah. Matematika yang kita pelajari adalah bahasa untuk memahami kesempurnaan ciptaan-Nya.
+  </p>
+
+  <!-- Section I: Referensi -->
+  <section class="content-section">
+    <h3 class="section-title">I. Referensi Pendukung</h3>
+    <ul class="reference-list">
+      <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <strong>Matematika Kelas IX SMP/MTs</strong>. Jakarta: Pusat Perbukuan, Balitbang dan Perbukuan, Kemendikbudristek.</li>
+      <li>Subchan, dkk. (2018). <strong>Matematika Kelas IX</strong>. Jakarta: Kementerian Pendidikan dan Kebudayaan.</li>
+      <li>Polya, G. (1945). <strong>How to Solve It: A New Aspect of Mathematical Method</strong>. Princeton University Press. (Buku klasik tentang strategi pemecahan masalah).</li>
+      <li>Posamentier, A. S., & Stephens, W. (2015). <strong>Mathematics for Elementary Teachers</strong>. Pearson. (Membahas aplikasi matematika dalam kehidupan).</li>
+      <li>Michell, John. (1995). <strong>The View Over Atlantis</strong>. Sphere Books. (Membahas geometri dalam arsitektur kuno termasuk Piramida Giza).</li>
+      <li>Brandenburg, R. (2012). <strong>Islamic Geometry and the Design of Mosque Architecture</strong>. Journal of Islamic Architecture.</li>
+      <li>Coxeter, H. S. M. (1973). <strong>Regular Polytopes</strong>. Dover Publications. (Membahas bangun ruang secara mendalam).</li>
+      <li>Kurikulum Merdeka. (2022). <strong>Capaian Pembelajaran Mata Pelajaran Matematika Fase D</strong>. Jakarta: Kemendikbudristek.</li>
+    </ul>
+  </section>
+
+  <!-- Keywords -->
+  <div class="keywords">
+    <span class="keyword-tag">Penerapan</span>
+    <span class="keyword-tag">Bangun Ruang</span>
+    <span class="keyword-tag">Sisi Datar</span>
+    <span class="keyword-tag">Sisi Lengkung</span>
+    <span class="keyword-tag">Aplikasi Nyata</span>
+    <span class="keyword-tag">Arsitektur Islam</span>
+    <span class="keyword-tag">Kubah Masjid</span>
+    <span class="keyword-tag">Piramida Giza</span>
+    <span class="keyword-tag">Monas</span>
+    <span class="keyword-tag">Tangki LPG</span>
+    <span class="keyword-tag">Kolam Renang</span>
+    <span class="keyword-tag">Kombinasi Bangun</span>
+    <span class="keyword-tag">Konversi Satuan</span>
+    <span class="keyword-tag">Biaya</span>
+    <span class="keyword-tag">Strategi Polya</span>
+    <span class="keyword-tag">Problem Solving</span>
+  </div>
+
+  <!-- ===== UJI FORMATIF ===== -->
+  <div class="quiz-container" id="quizSection">
+    <div class="quiz-header">
+      <h2>📝 Uji Formatif Bab 22</h2>
+      <p>Soal Penerapan Bangun Ruang<br>
+      📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) | ✍️ Bagian B: Essay (5 soal, 20 poin/soal)</p>
+    </div>
+
+    <form id="quizForm">
+      <!-- Identitas -->
+      <div class="content-section" style="background: rgba(0,0,0,0.2);">
+        <h4 style="color: var(--gold); margin-bottom: 16px; font-family: 'Playfair Display', serif;">📋 Identitas Siswa</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <div class="form-group">
+            <label>Nama Lengkap *</label>
+            <input type="text" id="studentName" required placeholder="Masukkan nama lengkap">
+          </div>
+          <div class="form-group">
+            <label>No. Absen / NIS *</label>
+            <input type="text" id="studentNIS" required placeholder="Masukkan NIS">
+          </div>
+          <div class="form-group">
+            <label>Kelas *</label>
+            <select id="studentClass" required>
+              <option value="">Pilih Kelas</option>
+              <option value="IX-A">IX-A</option>
+              <option value="IX-B">IX-B</option>
+              <option value="IX-C">IX-C</option>
+              <option value="IX-D">IX-D</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tanggal</label>
+            <input type="date" id="quizDate" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian A: Pilihan Ganda -->
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin: 30px 0 20px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 10px;">📋 Bagian A: Pilihan Ganda</h3>
+      <div id="mcqContainer"></div>
+
+      <!-- Bagian B: Essay -->
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 10px;">✍️ Bagian B: Essay</h3>
+      <div id="essayContainer"></div>
+
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadPDF()">📄 UNDUH PDF LENGKAP</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+        <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+        <a id="emailLink" href="#" class="btn btn-outline" style="display:none;">📧 KIRIM KE EMAIL GURU</a>
+      </div>
+    </form>
+
+    <!-- Results Panel -->
+    <div class="results-panel" id="resultsPanel">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 10px;">📊 Hasil Uji Formatif</h3>
+      <p id="resultMessage" style="color: var(--text); margin-bottom: 20px;"></p>
+      <div class="score-display">
+        <div class="score-item">
+          <div class="label">Pilihan Ganda</div>
+          <div class="value" id="scoreMCQ">0</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Essay (Simulasi)</div>
+          <div class="value" id="scoreEssay">0</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Skor Akhir</div>
+          <div class="value" id="scoreTotal">0</div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 16px;">
+        *Penilaian Essay bersifat otomatis berdasarkan kelengkapan jawaban (minimal 30 karakter). Guru akan melakukan penilaian ulang secara manual untuk ketepatan konsep dan perhitungan.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">Matematika Kelas IX</div>
+  <div class="footer-contact">
+    MTsN 10 Agam • <a href="mailto:asnimar130370@gmail.com">asnimar130370@gmail.com</a>
+  </div>
+  <div style="width: 100px; height: 1px; background: rgba(212,175,55,0.3); margin: 0 auto 16px;"></div>
+  <div class="copyright">© 2026 Asnimar, S.Pd — Hak Cipta Dilindungi Undang-Undang</div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  document.getElementById('quizDate').valueAsDate = new Date();
+
+  const mcqQuestions = [
+    { q: "Sebuah kolam renang berbentuk balok berukuran 25 m × 10 m × 2 m diisi air hingga ketinggian 1,8 m. Volume air dalam kolam adalah...", options: ["250 m³", "450 m³", "500 m³", "750 m³"], answer: 1 },
+    { q: "Sebuah tenda berbentuk prisma segitiga memiliki luas alas 3 m² dan panjang 4 m. Volume tenda adalah...", options: ["7 m³", "12 m³", "16 m³", "24 m³"], answer: 1 },
+    { q: "Sebuah kubah masjid berbentuk setengah bola dengan diameter 14 m. Luas bahan cat yang dibutuhkan adalah... (π = 22/7)", options: ["154 m²", "308 m²", "616 m²", "1.232 m²"], answer: 1 },
+    { q: "Sebuah tangki LPG berbentuk bola penuh dengan diameter 6 m. Volume tangki adalah... (π = 3,14)", options: ["56,52 m³", "113,04 m³", "226,08 m³", "339,12 m³"], answer: 1 },
+    { q: "Sebuah gudang terdiri dari balok (10 m × 8 m × 4 m) dan limas (alas 10 m × 8 m, tinggi 3 m). Volume total gudang adalah...", options: ["320 m³", "360 m³", "400 m³", "480 m³"], answer: 2 },
+    { q: "Piramida Agung Giza berbentuk limas segiempat dengan alas 230 m × 230 m dan tinggi 146 m. Volume piramida adalah...", options: ["± 2,57 juta m³", "± 5,14 juta m³", "± 7,72 juta m³", "± 1,28 juta m³"], answer: 0 },
+    { q: "Sebuah ruangan berbentuk balok berukuran 6 m × 5 m × 3 m akan dicat (dinding + langit-langit). Luas yang dicat adalah...", options: ["90 m²", "96 m²", "102 m²", "108 m²"], answer: 1 },
+    { q: "Jika sebuah bola dimasukkan ke dalam tabung sehingga bola menyentuh alas, tutup, dan selimut tabung, maka perbandingan volume bola dan tabung adalah...", options: ["1 : 2", "2 : 3", "1 : 3", "3 : 4"], answer: 1 },
+    { q: "Konversi 1 m³ ke liter adalah...", options: ["10 liter", "100 liter", "1.000 liter", "10.000 liter"], answer: 2 },
+    { q: "Langkah pertama dalam strategi pemecahan masalah Polya adalah...", options: ["Melaksanakan rencana", "Memahami masalah", "Merencanakan penyelesaian", "Melihat kembali"], answer: 1 }
+  ];
+
+  const essayQuestions = [
+    "Sebuah kolam renang berbentuk balok berukuran 25 m × 10 m × 2 m diisi air hingga ketinggian 1,8 m. Hitunglah: (a) volume air dalam liter, (b) luas keramik untuk melapisi dasar dan dinding, dan (c) biaya pengisian air jika harga air Rp5.000/m³!",
+    "Sebuah kubah masjid berbentuk setengah bola dengan diameter 14 m. Hitunglah: (a) luas bahan cat yang dibutuhkan, (b) volume udara di dalam kubah, dan (c) jumlah kaleng cat yang dibutuhkan jika 1 kaleng dapat menutupi 20 m²! (π = 22/7)",
+    "Sebuah gudang memiliki bagian bawah berbentuk balok (10 m × 8 m × 4 m) dan atap berbentuk limas segiempat dengan alas 10 m × 8 m dan tinggi 3 m. Hitunglah volume total gudang!",
+    "Sebuah tangki penyimpanan gas LPG berbentuk bola penuh memiliki diameter 6 m. Hitunglah: (a) volume gas yang dapat ditampung dalam liter, (b) luas permukaan tangki, dan (c) biaya pengecatan jika harga cat Rp75.000/m²! (π = 3,14)",
+    "Jelaskan 4 langkah pemecahan masalah menurut George Polya! Berikan contoh penerapannya pada salah satu soal kontekstual di bab ini, misalnya soal Piramida Giza atau Monas!"
+  ];
+
+  const mcqContainer = document.getElementById('mcqContainer');
+  mcqQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-text">
+        <span class="question-num">Soal ${index + 1}</span>
+        <span>${item.q}</span>
+        <span class="question-points">10 POIN</span>
+      </div>
+      <div class="options">
+        ${item.options.map((opt, optIndex) => `
+          <label class="option-label" id="label_${index}_${optIndex}">
+            <input type="radio" name="q${index}" value="${optIndex}">
+            <span>${String.fromCharCode(65 + optIndex)}. ${opt}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    mcqContainer.appendChild(qDiv);
+  });
+
+  const essayContainer = document.getElementById('essayContainer');
+  essayQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-text">
+        <span class="question-num">Essay ${index + 1}</span>
+        <span>${item}</span>
+        <span class="question-points">20 POIN</span>
+      </div>
+      <textarea id="essay${index}" placeholder="Tulis jawaban Anda di sini... (Minimal 30 karakter untuk mendapatkan poin)"></textarea>
+    `;
+    essayContainer.appendChild(qDiv);
+  });
+
+  let finalScores = { mcq: 0, essay: 0, total: 0 };
+
+  function submitQuiz() {
+    const name = document.getElementById('studentName').value;
+    const nis = document.getElementById('studentNIS').value;
+    const cls = document.getElementById('studentClass').value;
+    
+    if (!name || !nis || !cls) {
+      alert("Harap lengkapi identitas siswa (Nama, NIS, dan Kelas) sebelum mengirim jawaban!");
+      return;
+    }
+
+    let mcqScore = 0;
+    mcqQuestions.forEach((item, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      const labels = document.querySelectorAll(`[id^="label_${index}_"]`);
+      labels.forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'none'; });
+
+      if (selected) {
+        const val = parseInt(selected.value);
+        if (val === item.answer) {
+          mcqScore += 10;
+          document.getElementById(`label_${index}_${val}`).classList.add('correct');
+        } else {
+          document.getElementById(`label_${index}_${val}`).classList.add('incorrect');
+          document.getElementById(`label_${index}_${item.answer}`).classList.add('correct');
+        }
+      } else {
+        document.getElementById(`label_${index}_${item.answer}`).classList.add('correct');
+      }
+    });
+
+    let essayScore = 0;
+    for (let i = 0; i < 5; i++) {
+      const text = document.getElementById(`essay${i}`).value.trim();
+      if (text.length >= 30) essayScore += 20;
+      else if (text.length > 0) essayScore += 10;
+      document.getElementById(`essay${i}`).disabled = true;
+    }
+
+    finalScores = { mcq: mcqScore, essay: essayScore, total: mcqScore + essayScore };
+
+    document.getElementById('scoreMCQ').textContent = finalScores.mcq;
+    document.getElementById('scoreEssay').textContent = finalScores.essay;
+    document.getElementById('scoreTotal').textContent = finalScores.total;
+    
+    let msg = `Terima kasih, ${name}! Jawaban Anda telah berhasil dikumpulkan.`;
+    if (finalScores.total >= 160) msg += " 🌟 Luar biasa! Kemampuan Anda dalam menerapkan konsep bangun ruang sangat baik.";
+    else if (finalScores.total >= 100) msg += " 👍 Bagus! Tingkatkan lagi ketelitian dalam soal kontekstual yang kompleks.";
+    else msg += " 📚 Jangan menyerah! Pelajari kembali contoh soal dan strategi pemecahan masalah Polya.";
+    
+    document.getElementById('resultMessage').textContent = msg;
+    document.getElementById('resultsPanel').classList.add('show');
+    
+    document.querySelector('.btn-primary').disabled = true;
+    document.querySelector('.btn-primary').textContent = "✓ SUDAH DIKIRIM";
+    document.querySelector('.btn-primary').style.opacity = "0.6";
+
+    const emailBody = `Hasil Uji Formatif Bab 22 (Soal Penerapan Bangun Ruang)%0D%0A%0D%0ANama: ${name}%0D%0ANIS: ${nis}%0D%0AKelas: ${cls}%0D%0ATanggal: ${document.getElementById('quizDate').value}%0D%0A%0D%0ASKOR:%0D%0A- Pilihan Ganda: ${finalScores.mcq}/100%0D%0A- Essay: ${finalScores.essay}/100 (Perlu validasi guru)%0D%0A- Total: ${finalScores.total}/200%0D%0A%0D%0ACatatan: Jawaban detail dapat dilihat pada file PDF yang dilampirkan.`;
+    document.getElementById('emailLink').href = `mailto:asnimar130370@gmail.com?subject=Hasil Uji Formatif Bab 22 - ${name} (${cls})&body=${emailBody}`;
+    document.getElementById('emailLink').style.display = 'inline-flex';
+
+    document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function downloadPDF() { window.print(); }
+
+  function downloadTXT() {
+    const name = document.getElementById('studentName').value || "Siswa";
+    const nis = document.getElementById('studentNIS').value || "-";
+    const cls = document.getElementById('studentClass').value || "-";
+    const date = document.getElementById('quizDate').value || new Date().toLocaleDateString('id-ID');
+
+    let content = `HASIL UJI FORMATIF BAB 22: SOAL PENERAPAN BANGUN RUANG\n`;
+    content += `====================================================\n`;
+    content += `Nama  : ${name}\nNIS   : ${nis}\nKelas : ${cls}\nTanggal: ${date}\n`;
+    content += `====================================================\n`;
+    content += `SKOR PILIHAN GANDA : ${finalScores.mcq} / 100\n`;
+    content += `SKOR ESSAY (Simulasi): ${finalScores.essay} / 100\n`;
+    content += `TOTAL SKOR         : ${finalScores.total} / 200\n`;
+    content += `====================================================\n\nJAWABAN ESSAY:\n`;
+    for (let i = 0; i < 5; i++) {
+      content += `\nEssay ${i+1}:\n${document.getElementById(`essay${i}`).value || "(Tidak dijawab)"}\n`;
+    }
+    content += `\n====================================================\nDikirim otomatis dari Sistem Pembelajaran Matematika\nMTsN 10 Agam | Penulis: Asnimar, S.Pd`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Skor_UjiFormatif_Bab22_${name.replace(/\s+/g, '_')}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function resetQuiz() {
+    if (confirm("Apakah Anda yakin ingin mengulang ujian? Semua jawaban akan dihapus.")) {
+      document.getElementById('quizForm').reset();
+      document.getElementById('quizDate').valueAsDate = new Date();
+      document.getElementById('resultsPanel').classList.remove('show');
+      document.querySelectorAll('.option-label').forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'auto'; });
+      document.querySelectorAll('textarea').forEach(t => t.disabled = false);
+      
+      const btn = document.querySelector('.btn-primary');
+      btn.disabled = false; btn.textContent = "✉️ KIRIM JAWABAN & LIHAT HASIL"; btn.style.opacity = "1";
+      document.getElementById('emailLink').style.display = 'none';
+      finalScores = { mcq: 0, essay: 0, total: 0 };
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>

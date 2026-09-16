@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bab 14: Unsur-unsur Tabung | Matematika Kelas IX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4af37;
+    --gold-soft: #e9c767;
+    --gold-deep: #a8842a;
+    --ink: #0a0e1a;
+    --ink-2: #111729;
+    --ink-3: #1a2138;
+    --text: #e8e4d8;
+    --muted: #a9a28c;
+    --success: #4caf50;
+    --error: #f44336;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #070912 0%, #0a0e1a 50%, #06080f 100%);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,14,26,0.85);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  .nav-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text); text-decoration: none;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    transition: color 0.3s; display: flex; align-items: center; gap: 6px;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .chapter-header {
+    text-align: center; margin-bottom: 50px;
+    padding-bottom: 30px; border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+  .chapter-header .eyebrow {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .chapter-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px); font-weight: 700;
+    background: linear-gradient(180deg, #fff 0%, var(--gold-soft) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 16px;
+  }
+  .chapter-header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px; color: var(--muted);
+    max-width: 700px; margin: 0 auto 20px;
+  }
+  .author-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 10px 20px; background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 30px;
+    font-size: 13px; color: var(--gold-soft);
+  }
+
+  .content-section {
+    margin-bottom: 40px; padding: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+  .content-section:hover { border-color: rgba(212,175,55,0.3); background: rgba(255,255,255,0.03); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; color: var(--gold); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title::before { content: ""; width: 4px; height: 24px; background: var(--gold); border-radius: 2px; }
+  p { margin-bottom: 16px; color: #c9c2ad; }
+  
+  .highlight-box {
+    background: rgba(212,175,55,0.08); border-left: 3px solid var(--gold);
+    padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+  }
+  .highlight-box h4 { color: var(--gold); margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+  
+  .formula-box {
+    background: var(--ink-2); border: 1px solid rgba(212,175,55,0.3);
+    padding: 20px; border-radius: 8px; text-align: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 22px;
+    color: var(--gold-soft); margin: 20px 0; font-style: italic; letter-spacing: 1px;
+  }
+
+  .example-box {
+    background: rgba(10,14,26,0.6); border: 1px dashed rgba(212,175,55,0.3);
+    padding: 24px; border-radius: 8px; margin: 20px 0;
+  }
+  .example-box strong { color: var(--gold); }
+
+  .visual-3d {
+    background: rgba(10,14,26,0.6); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px; padding: 20px; margin: 24px 0; text-align: center;
+  }
+  .visual-3d svg { max-width: 100%; height: auto; }
+  .visual-caption { font-size: 13px; color: var(--muted); margin-top: 12px; font-style: italic; }
+
+  .element-list {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px; margin: 24px 0;
+  }
+  .element-item {
+    padding: 20px; background: rgba(212,175,55,0.05);
+    border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; transition: all 0.3s;
+  }
+  .element-item:hover { border-color: var(--gold); background: rgba(212,175,55,0.08); }
+  .element-item h4 {
+    color: var(--gold); font-family: 'Playfair Display', serif;
+    margin-bottom: 8px; font-size: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .element-item p { font-size: 13px; margin: 0; color: #c9c2ad; }
+
+  .comparison-box {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0;
+  }
+  .comparison-item {
+    padding: 20px; border-radius: 8px; background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,55,0.15);
+  }
+  .comparison-item h4 { color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 16px; }
+  .comparison-item p { font-size: 13px; margin: 0; }
+
+  .table-wrapper { overflow-x: auto; margin: 20px 0; border-radius: 8px; border: 1px solid rgba(212,175,55,0.15); }
+  .luxury-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); min-width: 600px; }
+  .luxury-table th { background: rgba(212,175,55,0.15); color: var(--gold); padding: 14px 16px; text-align: center; font-family: 'Playfair Display', serif; font-weight: 600; font-size: 15px; }
+  .luxury-table td { padding: 14px 16px; border-bottom: 1px solid rgba(212,175,55,0.08); color: #c9c2ad; font-size: 14px; text-align: center; }
+  .luxury-table td:first-child { text-align: left; font-weight: 600; color: var(--gold-soft); }
+  .luxury-table tr:last-child td { border-bottom: none; }
+  .luxury-table tr:hover td { background: rgba(212,175,55,0.05); }
+
+  .islamic-quote {
+    text-align: center; padding: 40px 20px; margin: 40px 0;
+    background: radial-gradient(circle, rgba(212,175,55,0.05), transparent);
+    border-top: 1px solid rgba(212,175,55,0.1); border-bottom: 1px solid rgba(212,175,55,0.1);
+  }
+  .islamic-quote .arabic { font-size: 26px; color: var(--gold); margin-bottom: 16px; font-family: 'Traditional Arabic', 'Arial', sans-serif; line-height: 1.6; }
+  .islamic-quote .translation { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; }
+  .islamic-quote .source { font-size: 12px; color: var(--gold-deep); margin-top: 12px; letter-spacing: 2px; }
+
+  .reference-list { list-style: none; padding: 0; }
+  .reference-list li { padding: 12px 0; border-bottom: 1px dashed rgba(212,175,55,0.2); color: var(--muted); font-size: 14px; display: flex; gap: 12px; align-items: flex-start; }
+  .reference-list li::before { content: "📚"; flex-shrink: 0; margin-top: 2px; }
+  .reference-list li strong { color: var(--text); }
+
+  .keywords { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 30px 0; }
+  .keyword-tag { padding: 6px 16px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); border-radius: 20px; font-size: 12px; color: var(--gold-soft); letter-spacing: 1px; }
+
+  .quiz-container {
+    margin-top: 60px; padding: 40px;
+    background: linear-gradient(145deg, rgba(26,33,56,0.8), rgba(10,14,26,0.8));
+    border: 1px solid rgba(212,175,55,0.3); border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .quiz-header { text-align: center; margin-bottom: 30px; }
+  .quiz-header h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); }
+  .quiz-header p { color: var(--muted); font-size: 14px; }
+
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .form-group input, .form-group select { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif; font-size: 14px; transition: all 0.3s; }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.08); }
+
+  .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .question-text { font-weight: 500; margin-bottom: 16px; color: #fff; display: flex; gap: 10px; }
+  .question-num { color: var(--gold); font-family: 'Playfair Display', serif; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option-label { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; cursor: pointer; transition: all 0.3s; }
+  .option-label:hover { background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3); }
+  .option-label input[type="radio"] { accent-color: var(--gold); width: 18px; height: 18px; }
+  .option-label.correct { background: rgba(76, 175, 80, 0.15); border-color: var(--success); }
+  .option-label.incorrect { background: rgba(244, 67, 54, 0.15); border-color: var(--error); }
+
+  textarea { width: 100%; padding: 16px; min-height: 120px; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif; font-size: 14px; resize: vertical; transition: all 0.3s; }
+  textarea:focus { outline: none; border-color: var(--gold); }
+
+  .action-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; justify-content: center; }
+  .btn { padding: 14px 24px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-deep)); color: var(--ink); box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212,175,55,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid rgba(212,175,55,0.3); }
+  .btn-secondary:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+  .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+  .btn-outline:hover { background: rgba(212,175,55,0.1); }
+
+  .results-panel { display: none; margin-top: 30px; padding: 30px; background: rgba(212,175,55,0.05); border: 1px solid var(--gold); border-radius: 12px; text-align: center; }
+  .results-panel.show { display: block; animation: fadeIn 0.5s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .score-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
+  .score-item { padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px; }
+  .score-item .label { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .score-item .value { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--gold); margin-top: 8px; }
+
+  footer { border-top: 1px solid rgba(212,175,55,0.15); padding: 40px 24px; text-align: center; background: rgba(7,9,18,0.8); margin-top: 60px; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+  .footer-contact { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .footer-contact a { color: var(--gold-soft); text-decoration: none; }
+  .copyright { font-size: 11px; letter-spacing: 2px; color: #6b6555; text-transform: uppercase; }
+
+  @media print { nav, .action-bar, footer { display: none !important; } body { background: #fff; color: #000; } .container { max-width: 100%; padding: 0; } .content-section, .quiz-container { background: #fff; border: 1px solid #ccc; color: #000; break-inside: avoid; } .section-title, .chapter-header h1 { color: #000 !important; -webkit-text-fill-color: #000 !important; } p, .question-text { color: #000 !important; } .formula-box { background: #f5f5f5; color: #000; border-color: #000; } .luxury-table th { background: #e0e0e0; color: #000; } .luxury-table td { color: #000; border-bottom: 1px solid #ccc; } }
+  @media (max-width: 600px) { .score-display { grid-template-columns: 1fr; } .action-bar { flex-direction: column; } .btn { width: 100%; justify-content: center; } .comparison-box { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="13.html">← Bab 13: Volume Limas</a></li>
+      <li><a href="index.html">📖 Daftar Isi</a></li>
+      <li><a href="15.html">Bab 15: Luas Permukaan Tabung →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+
+  <!-- Chapter Header -->
+  <header class="chapter-header">
+    <div class="eyebrow">Pertemuan 14 • Matematika Kelas IX Semester 1</div>
+    <h1>Unsur-unsur Tabung</h1>
+    <p class="subtitle">Mengenal struktur geometris tabung (silinder) — pintu gerbang memahami bangun ruang sisi lengkung dan aplikasinya dalam kehidupan</p>
+    <div class="author-badge">
+      <span>👤 Asnimar, S.Pd</span>
+      <span>•</span>
+      <span>MTsN 10 Agam</span>
+    </div>
+  </header>
+
+  <!-- Section A -->
+  <section class="content-section">
+    <h3 class="section-title">A. Pengertian Tabung (Silinder)</h3>
+    <p><strong>Tabung</strong> (disebut juga <strong>silinder</strong>) adalah bangun ruang tiga dimensi yang dibatasi oleh <strong>dua buah lingkaran</strong> yang sejajar dan sama besar (sebagai alas dan tutup) serta sebuah <strong>bidang lengkung</strong> yang menghubungkan kedua lingkaran tersebut (disebut <em>selimut tabung</em>).</p>
+    
+    <div class="highlight-box">
+      <h4>📌 Definisi Formal</h4>
+      <p style="margin:0; color: var(--text);">Tabung adalah bangun ruang sisi lengkung yang memiliki dua sisi alas dan tutup berbentuk lingkaran yang kongruen dan sejajar, serta satu sisi lengkung (selimut) yang tegak lurus terhadap alas.</p>
+    </div>
+
+    <p>Berbeda dengan bangun ruang sisi datar (kubus, balok, prisma, limas) yang seluruh sisinya berupa bidang datar, tabung memiliki <strong>sisi lengkung</strong>. Inilah yang membedakannya dan membuatnya masuk dalam kategori <strong>bangun ruang sisi lengkung</strong>, bersama dengan kerucut dan bola.</p>
+
+    <div class="comparison-box">
+      <div class="comparison-item">
+        <h4>📦 Bangun Ruang Sisi Datar</h4>
+        <p>Seluruh sisinya berupa bidang datar (poligon). Contoh: kubus, balok, prisma, limas. Sisi tegak berupa persegi panjang atau segitiga.</p>
+      </div>
+      <div class="comparison-item">
+        <h4>🔵 Bangun Ruang Sisi Lengkung</h4>
+        <p>Memiliki minimal satu sisi berupa bidang lengkung. Contoh: tabung, kerucut, bola. Alas bisa berbentuk lingkaran.</p>
+      </div>
+    </div>
+
+    <p>Dalam kehidupan sehari-hari, tabung adalah bentuk yang paling sering kita temui:</p>
+    <ul style="margin-left: 20px; color: #c9c2ad; margin-bottom: 16px;">
+      <li><strong>Kaleng susu, kaleng cat, kaleng makanan</strong></li>
+      <li><strong>Pipa air, pipa gas, pipa kabel</strong></li>
+      <li><strong>Gelas, botol, termos air</strong></li>
+      <li><strong>Drum minyak, tangki air, silo gandum</strong></li>
+      <li><strong>Tiang bangunan, kolom, pilar</strong></li>
+      <li><strong>Roll tisu, pensil, baterai</strong></li>
+    </ul>
+  </section>
+
+  <!-- Section B -->
+  <section class="content-section">
+    <h3 class="section-title">B. Visualisasi Tabung</h3>
+    
+    <div class="visual-3d">
+      <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" style="background: rgba(255,255,255,0.02); border-radius: 8px;">
+        <!-- Cylinder body -->
+        <ellipse cx="250" cy="80" rx="100" ry="30" fill="rgba(212,175,55,0.2)" stroke="#d4af37" stroke-width="1.5"/>
+        <rect x="150" y="80" width="200" height="180" fill="rgba(212,175,55,0.08)" stroke="none"/>
+        <line x1="150" y1="80" x2="150" y2="260" stroke="#d4af37" stroke-width="1.5"/>
+        <line x1="350" y1="80" x2="350" y2="260" stroke="#d4af37" stroke-width="1.5"/>
+        <ellipse cx="250" cy="260" rx="100" ry="30" fill="rgba(212,175,55,0.15)" stroke="#d4af37" stroke-width="1.5"/>
+        <!-- Back arc (dashed) -->
+        <path d="M 150 80 A 100 30 0 0 1 350 80" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,4"/>
+        
+        <!-- Radius -->
+        <line x1="250" y1="260" x2="350" y2="260" stroke="#e9c767" stroke-width="1.5"/>
+        <text x="300" y="253" fill="#e9c767" font-size="13" font-family="Cormorant Garamond" font-style="italic">r</text>
+        <circle cx="250" cy="260" r="3" fill="#e9c767"/>
+        
+        <!-- Height -->
+        <line x1="380" y1="80" x2="380" y2="260" stroke="#e9c767" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="375" y1="80" x2="385" y2="80" stroke="#e9c767" stroke-width="1.5"/>
+        <line x1="375" y1="260" x2="385" y2="260" stroke="#e9c767" stroke-width="1.5"/>
+        <text x="390" y="175" fill="#e9c767" font-size="14" font-family="Cormorant Garamond" font-style="italic">t</text>
+        
+        <!-- Labels -->
+        <text x="250" y="70" fill="#e9c767" font-size="12" font-family="Poppins" text-anchor="middle">Tutup (Lingkaran)</text>
+        <text x="250" y="300" fill="#e9c767" font-size="12" font-family="Poppins" text-anchor="middle">Alas (Lingkaran)</text>
+        <text x="100" y="175" fill="#e9c767" font-size="12" font-family="Poppins" text-anchor="middle">Selimut</text>
+        <text x="100" y="190" fill="#e9c767" font-size="12" font-family="Poppins" text-anchor="middle">(Sisi Lengkung)</text>
+      </svg>
+      <div class="visual-caption">Visualisasi 3D tabung: Alas, Tutup, Selimut, Jari-jari (r), dan Tinggi (t)</div>
+    </div>
+  </section>
+
+  <!-- Section C -->
+  <section class="content-section">
+    <h3 class="section-title">C. Unsur-unsur Tabung</h3>
+    <p>Tabung memiliki beberapa unsur penting yang perlu dipahami sebelum mempelajari luas permukaan dan volumenya. Berikut adalah enam unsur utama tabung:</p>
+    
+    <div class="element-list">
+      <div class="element-item">
+        <h4>⭕ Alas</h4>
+        <p>Sisi bawah tabung berbentuk <strong>lingkaran</strong>. Alas merupakan bidang datar yang menjadi dasar tabung.</p>
+      </div>
+      <div class="element-item">
+        <h4>⭕ Tutup</h4>
+        <p>Sisi atas tabung berbentuk <strong>lingkaran</strong> yang sama besar (kongruen) dan sejajar dengan alas.</p>
+      </div>
+      <div class="element-item">
+        <h4>🌊 Selimut (Sisi Lengkung)</h4>
+        <p>Bidang lengkung yang menghubungkan alas dan tutup. Jika dibuka, selimut tabung berbentuk <strong>persegi panjang</strong> dengan panjang = keliling alas dan lebar = tinggi tabung.</p>
+      </div>
+      <div class="element-item">
+        <h4>📏 Jari-jari (r)</h4>
+        <p>Jarak dari pusat lingkaran alas (atau tutup) ke tepi lingkaran. Jari-jari menentukan ukuran lingkaran alas.</p>
+      </div>
+      <div class="element-item">
+        <h4>📏 Diameter (d)</h4>
+        <p>Garis tengah lingkaran alas yang melalui pusat. Diameter = <strong>2 × jari-jari</strong> (d = 2r).</p>
+      </div>
+      <div class="element-item">
+        <h4>📏 Tinggi (t)</h4>
+        <p>Jarak tegak lurus antara bidang alas dan bidang tutup. Tinggi juga merupakan lebar selimut tabung.</p>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      Hubungan Unsur-unsur Tabung:<br>
+      Diameter = 2r &nbsp;|&nbsp; Jari-jari = d/2<br>
+      Keliling Alas = 2πr = πd<br>
+      Luas Alas = πr²
+    </div>
+  </section>
+
+  <!-- Section D -->
+  <section class="content-section">
+    <h3 class="section-title">D. Sifat-sifat Tabung</h3>
+    <p>Tabung memiliki sifat-sifat khusus yang membedakannya dari bangun ruang lain. Berikut adalah sifat-sifat lengkap tabung:</p>
+    
+    <div class="table-wrapper">
+      <table class="luxury-table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Sifat Tabung</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Memiliki 3 sisi</td><td>2 sisi datar (alas & tutup lingkaran) + 1 sisi lengkung (selimut)</td></tr>
+          <tr><td>2</td><td>Memiliki 2 rusuk</td><td>Rusuk alas dan rusuk tutup (keduanya berupa lingkaran)</td></tr>
+          <tr><td>3</td><td>Tidak memiliki titik sudut</td><td>Karena tidak ada pertemuan rusuk-rusuk lurus</td></tr>
+          <tr><td>4</td><td>Alas dan tutup kongruen</td><td>Kedua lingkaran sama besar dan sejajar</td></tr>
+          <tr><td>5</td><td>Selimut tegak lurus alas</td><td>Sisi lengkung membentuk sudut 90° terhadap alas</td></tr>
+          <tr><td>6</td><td>Memiliki sumbu simetri</td><td>Garis yang melalui pusat alas dan tutup</td></tr>
+          <tr><td>7</td><td>Selimut jika dibuka = persegi panjang</td><td>Panjang = keliling lingkaran, Lebar = tinggi tabung</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <h4>💡 Mengapa Tabung Tidak Memiliki Titik Sudut?</h4>
+      <p style="margin:0; color: var(--text);">Titik sudut terbentuk dari pertemuan dua atau lebih rusuk lurus. Pada tabung, rusuknya berupa <strong>lingkaran</strong> (garis lengkung tertutup), sehingga tidak ada titik pertemuan rusuk lurus. Oleh karena itu, tabung <strong>tidak memiliki titik sudut</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Section E -->
+  <section class="content-section">
+    <h3 class="section-title">E. Jaring-jaring Tabung</h3>
+    <p>Salah satu sifat menarik tabung adalah jaring-jaringnya. Jika tabung dipotong sepanjang tingginya dan dibuka, maka akan terbentuk tiga bagian:</p>
+    
+    <div class="visual-3d">
+      <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="background: rgba(255,255,255,0.02); border-radius: 8px;">
+        <!-- Circle 1 (alas) -->
+        <circle cx="60" cy="110" r="45" fill="rgba(212,175,55,0.2)" stroke="#d4af37" stroke-width="1.5"/>
+        <text x="60" y="115" fill="#e9c767" font-size="11" font-family="Poppins" text-anchor="middle">Alas</text>
+        
+        <!-- Rectangle (selimut) -->
+        <rect x="130" y="40" width="220" height="140" fill="rgba(212,175,55,0.1)" stroke="#d4af37" stroke-width="1.5"/>
+        <text x="240" y="105" fill="#e9c767" font-size="12" font-family="Poppins" text-anchor="middle">Selimut</text>
+        <text x="240" y="125" fill="#e9c767" font-size="10" font-family="Poppins" text-anchor="middle">(Persegi Panjang)</text>
+        <!-- Dimension labels -->
+        <text x="240" y="33" fill="#a9a28c" font-size="10" font-family="Poppins" text-anchor="middle">Panjang = 2πr (Keliling Alas)</text>
+        <text x="365" y="115" fill="#a9a28c" font-size="10" font-family="Poppins">Lebar = t</text>
+        
+        <!-- Circle 2 (tutup) -->
+        <circle cx="420" cy="110" r="45" fill="rgba(212,175,55,0.2)" stroke="#d4af37" stroke-width="1.5"/>
+        <text x="420" y="115" fill="#e9c767" font-size="11" font-family="Poppins" text-anchor="middle">Tutup</text>
+      </svg>
+      <div class="visual-caption">Jaring-jaring tabung: 2 lingkaran (alas & tutup) + 1 persegi panjang (selimut)</div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 Fakta Penting tentang Selimut Tabung</h4>
+      <p style="margin:0; color: var(--text);">
+        Ketika selimut tabung dibuka (dibentangkan), ia membentuk <strong>persegi panjang</strong> dengan:<br>
+        • <strong>Panjang</strong> = Keliling lingkaran alas = <strong>2πr</strong><br>
+        • <strong>Lebar</strong> = Tinggi tabung = <strong>t</strong><br><br>
+        Fakta ini sangat penting untuk memahami rumus <em>luas selimut tabung</em> di Bab 15.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section F -->
+  <section class="content-section">
+    <h3 class="section-title">F. Tabel Perbandingan: Tabung vs Prisma</h3>
+    <p>Tabung dapat dipandang sebagai <strong>prisma dengan alas lingkaran</strong> yang jumlah sisi alasnya tak hingga. Berikut perbandingannya:</p>
+    
+    <div class="table-wrapper">
+      <table class="luxury-table">
+        <thead>
+          <tr>
+            <th>Aspek</th>
+            <th>Prisma</th>
+            <th>Tabung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Bentuk Alas</td><td>Segi-n (segitiga, segiempat, dll.)</td><td>Lingkaran</td></tr>
+          <tr><td>Jumlah Sisi</td><td>n + 2</td><td>3 (2 lingkaran + 1 selimut)</td></tr>
+          <tr><td>Sisi Tegak</td><td>Persegi panjang (bidang datar)</td><td>Selimut (bidang lengkung)</td></tr>
+          <tr><td>Rusuk</td><td>3n (garis lurus)</td><td>2 (lingkaran)</td></tr>
+          <tr><td>Titik Sudut</td><td>2n</td><td>0 (tidak ada)</td></tr>
+          <tr><td>Rumus Volume</td><td>V = La × t</td><td>V = πr² × t</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section G -->
+  <section class="content-section">
+    <h3 class="section-title">G. Contoh Soal dan Pembahasan</h3>
+    
+    <div class="example-box">
+      <strong>📝 Contoh Soal 1 (Identifikasi Unsur):</strong><br>
+      Sebuah tabung memiliki jari-jari alas 7 cm dan tinggi 20 cm. Tentukan:<br>
+      a. Diameter alas<br>
+      b. Keliling alas<br>
+      c. Luas alas<br>
+      d. Panjang selimut jika dibuka
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: r = 7 cm, t = 20 cm, gunakan π = 22/7</p>
+    
+    <div class="step-box">
+      <div class="step-num">a</div>
+      <div class="step-content">
+        <h4>Diameter Alas</h4>
+        <p>d = 2r = 2 × 7 = <strong style="color:var(--gold)">14 cm</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">b</div>
+      <div class="step-content">
+        <h4>Keliling Alas</h4>
+        <p>K = 2πr = 2 × (22/7) × 7 = <strong style="color:var(--gold)">44 cm</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">c</div>
+      <div class="step-content">
+        <h4>Luas Alas</h4>
+        <p>La = πr² = (22/7) × 7² = (22/7) × 49 = <strong style="color:var(--gold)">154 cm²</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">d</div>
+      <div class="step-content">
+        <h4>Panjang Selimut</h4>
+        <p>Panjang selimut = Keliling alas = <strong style="color:var(--gold)">44 cm</strong></p>
+      </div>
+    </div>
+
+    <div class="example-box" style="margin-top: 30px;">
+      <strong>📝 Contoh Soal 2 (Kontekstual):</strong><br>
+      Sebuah kaleng cat berbentuk tabung memiliki diameter 20 cm dan tinggi 30 cm. Tentukan jari-jari, keliling alas, dan panjang selimut kaleng tersebut!
+    </div>
+
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Diketahui: d = 20 cm, t = 30 cm, π = 3,14</p>
+    
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Jari-jari</h4>
+        <p>r = d/2 = 20/2 = <strong style="color:var(--gold)">10 cm</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Keliling Alas</h4>
+        <p>K = πd = 3,14 × 20 = <strong style="color:var(--gold)">62,8 cm</strong></p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Panjang Selimut</h4>
+        <p>Panjang selimut = Keliling alas = <strong style="color:var(--gold)">62,8 cm</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section H: Teori & Filosofi -->
+  <section class="content-section">
+    <h3 class="section-title">H. Teori Pendukung: Tabung dalam Sains dan Teknologi</h3>
+    <p>Bentuk tabung memiliki keunggulan struktural yang luar biasa. Dalam ilmu teknik, tabung (silinder) dikenal sebagai bentuk yang paling <strong>efisien dalam menahan tekanan internal</strong>. Itulah mengapa pipa air, tabung gas, dan mesin kendaraan semuanya berbentuk silinder.</p>
+    <p><strong>Archimedes</strong> (287–212 SM) adalah matematikawan pertama yang secara sistematis mempelajari sifat-sifat tabung. Beliau menemukan hubungan antara volume tabung dan bola yang ada di dalamnya: volume bola = ⅔ × volume tabung yang melingkupinya. Penemuan ini begitu dibanggakan oleh Archimedes sehingga beliau meminta gambar bola dalam tabung diukir di batu nisannya.</p>
+    
+    <div class="highlight-box">
+      <h4>🎯 Mengapa Bentuk Tabung Banyak Digunakan?</h4>
+      <p style="margin:0; color: var(--text);">
+        <strong>1. Kekuatan Struktural:</strong> Bentuk silinder mendistribusikan tekanan secara merata ke seluruh permukaan, sehingga sangat kuat menahan tekanan dari dalam maupun luar.<br>
+        <strong>2. Efisiensi Material:</strong> Untuk volume yang sama, tabung membutuhkan luas permukaan lebih sedikit dibanding balok, sehingga lebih hemat bahan.<br>
+        <strong>3. Aliran Fluida:</strong> Bentuk melingkar meminimalkan gesekan saat cairan atau gas mengalir, sehingga ideal untuk pipa.<br>
+        <strong>4. Estetika:</strong> Bentuk yang simetris dan harmonis, sering digunakan dalam desain produk dan arsitektur.<br>
+        <strong>5. Mudah Diproduksi:</strong> Proses pembuatan (seperti ekstrusi dan pencetakan) lebih sederhana untuk bentuk silinder.
+      </p>
+    </div>
+  </section>
+
+  <!-- Islamic Quote -->
+  <div class="islamic-quote">
+    <div class="arabic">وَمِن كُلِّ شَىْءٍ خَلَقْنَا زَوْجَيْنِ لَعَلَّكُمْ تَذَكَّرُونَ</div>
+    <div class="translation">"Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)."</div>
+    <div class="source">— QS. Adz-Dzariyat [51]: 49</div>
+  </div>
+  <p style="text-align: center; color: var(--muted); font-style: italic; margin-top: -20px; margin-bottom: 30px;">
+    Metafora indah untuk tabung: Alas dan tutup tabung adalah dua lingkaran yang "berpasangan" — sama besar, sejajar, dan saling melengkapi. Sebagaimana Allah menciptakan segala sesuatu berpasang-pasangan dengan sempurna dan seimbang.
+  </p>
+
+  <!-- Section I: Referensi -->
+  <section class="content-section">
+    <h3 class="section-title">I. Referensi Pendukung</h3>
+    <ul class="reference-list">
+      <li>Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi. (2021). <strong>Matematika Kelas IX SMP/MTs</strong>. Jakarta: Pusat Perbukuan, Balitbang dan Perbukuan, Kemendikbudristek.</li>
+      <li>Subchan, dkk. (2018). <strong>Matematika Kelas IX</strong>. Jakarta: Kementerian Pendidikan dan Kebudayaan.</li>
+      <li>Archimedes. (250 SM). <strong>On the Sphere and Cylinder</strong>. (Karya klasik yang membuktikan hubungan volume tabung dan bola).</li>
+      <li>Stein, S. (1999). <strong>Archimedes: What Did He Do Besides Cry Eureka?</strong>. Mathematical Association of America.</li>
+      <li>Kurikulum Merdeka. (2022). <strong>Capaian Pembelajaran Mata Pelajaran Matematika Fase D</strong>. Jakarta: Kemendikbudristek.</li>
+    </ul>
+  </section>
+
+  <!-- Keywords -->
+  <div class="keywords">
+    <span class="keyword-tag">Tabung</span>
+    <span class="keyword-tag">Silinder</span>
+    <span class="keyword-tag">Alas Lingkaran</span>
+    <span class="keyword-tag">Tutup</span>
+    <span class="keyword-tag">Selimut</span>
+    <span class="keyword-tag">Jari-jari</span>
+    <span class="keyword-tag">Diameter</span>
+    <span class="keyword-tag">Tinggi</span>
+    <span class="keyword-tag">Sisi Lengkung</span>
+    <span class="keyword-tag">Archimedes</span>
+    <span class="keyword-tag">Bangun Ruang Sisi Lengkung</span>
+  </div>
+
+  <!-- ===== UJI FORMATIF ===== -->
+  <div class="quiz-container" id="quizSection">
+    <div class="quiz-header">
+      <h2>📝 Uji Formatif Bab 14</h2>
+      <p>Unsur-unsur Tabung<br>
+      📋 Bagian A: Pilihan Ganda (10 soal, 10 poin/soal) | ✍️ Bagian B: Essay (5 soal, 20 poin/soal)</p>
+    </div>
+
+    <form id="quizForm">
+      <div class="content-section" style="background: rgba(0,0,0,0.2);">
+        <h4 style="color: var(--gold); margin-bottom: 16px; font-family: 'Playfair Display', serif;">📋 Identitas Siswa</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <div class="form-group"><label>Nama Lengkap *</label><input type="text" id="studentName" required placeholder="Masukkan nama lengkap"></div>
+          <div class="form-group"><label>No. Absen / NIS *</label><input type="text" id="studentNIS" required placeholder="Masukkan NIS"></div>
+          <div class="form-group"><label>Kelas *</label><select id="studentClass" required><option value="">Pilih Kelas</option><option value="IX-A">IX-A</option><option value="IX-B">IX-B</option><option value="IX-C">IX-C</option><option value="IX-D">IX-D</option></select></div>
+          <div class="form-group"><label>Tanggal</label><input type="date" id="quizDate" required></div>
+        </div>
+      </div>
+
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin: 30px 0 20px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 10px;">📋 Bagian A: Pilihan Ganda</h3>
+      <div id="mcqContainer"></div>
+
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 10px;">✍️ Bagian B: Essay</h3>
+      <div id="essayContainer"></div>
+
+      <div class="action-bar">
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadPDF()">📄 UNDUH PDF LENGKAP</button>
+        <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+        <button type="button" class="btn btn-outline" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+        <a id="emailLink" href="#" class="btn btn-outline" style="display:none;">📧 KIRIM KE EMAIL GURU</a>
+      </div>
+    </form>
+
+    <div class="results-panel" id="resultsPanel">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 10px;">📊 Hasil Uji Formatif</h3>
+      <p id="resultMessage" style="color: var(--text); margin-bottom: 20px;"></p>
+      <div class="score-display">
+        <div class="score-item"><div class="label">Pilihan Ganda</div><div class="value" id="scoreMCQ">0</div></div>
+        <div class="score-item"><div class="label">Essay (Simulasi)</div><div class="value" id="scoreEssay">0</div></div>
+        <div class="score-item"><div class="label">Skor Akhir</div><div class="value" id="scoreTotal">0</div></div>
+      </div>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 16px;">*Penilaian Essay bersifat otomatis berdasarkan kelengkapan jawaban (minimal 30 karakter). Guru akan melakukan penilaian ulang secara manual untuk ketepatan konsep.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">Matematika Kelas IX</div>
+  <div class="footer-contact">MTsN 10 Agam • <a href="mailto:asnimar130370@gmail.com">asnimar130370@gmail.com</a></div>
+  <div style="width: 100px; height: 1px; background: rgba(212,175,55,0.3); margin: 0 auto 16px;"></div>
+  <div class="copyright">© 2026 Asnimar, S.Pd — Hak Cipta Dilindungi Undang-Undang</div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  document.getElementById('quizDate').valueAsDate = new Date();
+
+  const mcqQuestions = [
+    { q: "Tabung (silinder) termasuk dalam kategori bangun ruang...", options: ["Sisi datar", "Sisi lengkung", "Sisi campuran", "Tidak beraturan"], answer: 1 },
+    { q: "Jumlah sisi pada tabung adalah...", options: ["1", "2", "3", "4"], answer: 2 },
+    { q: "Bentuk alas dan tutup tabung adalah...", options: ["Persegi", "Persegi panjang", "Segitiga", "Lingkaran"], answer: 3 },
+    { q: "Jumlah titik sudut pada tabung adalah...", options: ["0", "1", "2", "4"], answer: 0 },
+    { q: "Jika selimut tabung dibuka, maka akan berbentuk...", options: ["Lingkaran", "Segitiga", "Persegi panjang", "Trapesium"], answer: 2 },
+    { q: "Sebuah tabung memiliki jari-jari 14 cm. Diameter tabung tersebut adalah...", options: ["7 cm", "14 cm", "28 cm", "42 cm"], answer: 2 },
+    { q: "Panjang selimut tabung sama dengan...", options: ["Diameter alas", "Tinggi tabung", "Keliling alas", "Luas alas"], answer: 2 },
+    { q: "Jumlah rusuk pada tabung adalah...", options: ["0", "1", "2", "4"], answer: 2 },
+    { q: "Matematikawan yang pertama kali mempelajari sifat-sifat tabung secara sistematis adalah...", options: ["Euclides", "Pythagoras", "Archimedes", "Al-Khawarizmi"], answer: 2 },
+    { q: "Contoh benda berbentuk tabung dalam kehidupan sehari-hari adalah...", options: ["Kotak kardus", "Bola basket", "Kaleng susu", "Topi ulang tahun"], answer: 2 }
+  ];
+
+  const essayQuestions = [
+    "Jelaskan pengertian tabung (silinder)! Sebutkan dan jelaskan enam unsur-unsur tabung beserta gambarnya!",
+    "Sebuah tabung memiliki jari-jari 10 cm dan tinggi 25 cm. Hitunglah diameter, keliling alas, luas alas, dan panjang selimut tabung! (Gunakan π = 3,14)",
+    "Mengapa tabung tidak memiliki titik sudut? Jelaskan dengan mengacu pada sifat-sifat tabung!",
+    "Jelaskan apa yang terjadi jika selimut tabung dipotong sepanjang tingginya dan dibuka! Apa bentuk yang dihasilkan dan bagaimana hubungannya dengan unsur-unsur tabung?",
+    "Berikan minimal 5 contoh benda berbentuk tabung dalam kehidupan sehari-hari! Jelaskan mengapa bentuk tabung banyak digunakan dalam industri dan teknologi!"
+  ];
+
+  const mcqContainer = document.getElementById('mcqContainer');
+  mcqQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `<div class="question-text"><span class="question-num">Soal ${index + 1}</span><span>${item.q}</span></div><div class="options">${item.options.map((opt, optIndex) => `<label class="option-label" id="label_${index}_${optIndex}"><input type="radio" name="q${index}" value="${optIndex}"><span>${String.fromCharCode(65 + optIndex)}. ${opt}</span></label>`).join('')}</div>`;
+    mcqContainer.appendChild(qDiv);
+  });
+
+  const essayContainer = document.getElementById('essayContainer');
+  essayQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `<div class="question-text"><span class="question-num">Essay ${index + 1}</span><span>${item}</span></div><textarea id="essay${index}" placeholder="Tulis jawaban Anda di sini... (Minimal 30 karakter untuk mendapatkan poin)"></textarea>`;
+    essayContainer.appendChild(qDiv);
+  });
+
+  let finalScores = { mcq: 0, essay: 0, total: 0 };
+
+  function submitQuiz() {
+    const name = document.getElementById('studentName').value;
+    const nis = document.getElementById('studentNIS').value;
+    const cls = document.getElementById('studentClass').value;
+    if (!name || !nis || !cls) { alert("Harap lengkapi identitas siswa!"); return; }
+
+    let mcqScore = 0;
+    mcqQuestions.forEach((item, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      document.querySelectorAll(`[id^="label_${index}_"]`).forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'none'; });
+      if (selected) { const val = parseInt(selected.value); if (val === item.answer) { mcqScore += 10; document.getElementById(`label_${index}_${val}`).classList.add('correct'); } else { document.getElementById(`label_${index}_${val}`).classList.add('incorrect'); document.getElementById(`label_${index}_${item.answer}`).classList.add('correct'); } } else { document.getElementById(`label_${index}_${item.answer}`).classList.add('correct'); }
+    });
+
+    let essayScore = 0;
+    for (let i = 0; i < 5; i++) { const text = document.getElementById(`essay${i}`).value.trim(); if (text.length >= 30) essayScore += 20; else if (text.length > 0) essayScore += 10; document.getElementById(`essay${i}`).disabled = true; }
+
+    finalScores = { mcq: mcqScore, essay: essayScore, total: mcqScore + essayScore };
+    document.getElementById('scoreMCQ').textContent = finalScores.mcq;
+    document.getElementById('scoreEssay').textContent = finalScores.essay;
+    document.getElementById('scoreTotal').textContent = finalScores.total;
+    
+    let msg = `Terima kasih, ${name}! Jawaban Anda telah berhasil dikumpulkan.`;
+    if (finalScores.total >= 160) msg += " 🌟 Luar biasa! Pemahaman Anda tentang unsur-unsur tabung sangat baik.";
+    else if (finalScores.total >= 100) msg += " 👍 Bagus! Tingkatkan lagi pemahaman tentang sifat-sifat tabung.";
+    else msg += " 📚 Jangan menyerah! Pelajari kembali materi unsur-unsur tabung.";
+    document.getElementById('resultMessage').textContent = msg;
+    document.getElementById('resultsPanel').classList.add('show');
+    
+    document.querySelector('.btn-primary').disabled = true;
+    document.querySelector('.btn-primary').textContent = "✓ SUDAH DIKIRIM";
+    document.querySelector('.btn-primary').style.opacity = "0.6";
+
+    const emailBody = `Hasil Uji Formatif Bab 14 (Unsur-unsur Tabung)%0D%0A%0D%0ANama: ${name}%0D%0ANIS: ${nis}%0D%0AKelas: ${cls}%0D%0ATanggal: ${document.getElementById('quizDate').value}%0D%0A%0D%0ASKOR:%0D%0A- Pilihan Ganda: ${finalScores.mcq}/100%0D%0A- Essay: ${finalScores.essay}/100%0D%0A- Total: ${finalScores.total}/200`;
+    document.getElementById('emailLink').href = `mailto:asnimar130370@gmail.com?subject=Hasil Uji Formatif Bab 14 - ${name} (${cls})&body=${emailBody}`;
+    document.getElementById('emailLink').style.display = 'inline-flex';
+    document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function downloadPDF() { window.print(); }
+
+  function downloadTXT() {
+    const name = document.getElementById('studentName').value || "Siswa";
+    const nis = document.getElementById('studentNIS').value || "-";
+    const cls = document.getElementById('studentClass').value || "-";
+    const date = document.getElementById('quizDate').value || new Date().toLocaleDateString('id-ID');
+    let content = `HASIL UJI FORMATIF BAB 14: UNSUR-UNSUR TABUNG\n====================================================\nNama  : ${name}\nNIS   : ${nis}\nKelas : ${cls}\nTanggal: ${date}\n====================================================\nSKOR PILIHAN GANDA : ${finalScores.mcq} / 100\nSKOR ESSAY (Simulasi): ${finalScores.essay} / 100\nTOTAL SKOR         : ${finalScores.total} / 200\n====================================================\n\nJAWABAN ESSAY:\n`;
+    for (let i = 0; i < 5; i++) { content += `\nEssay ${i+1}:\n${document.getElementById(`essay${i}`).value || "(Tidak dijawab)"}\n`; }
+    content += `\n====================================================\nDikirim otomatis dari Sistem Pembelajaran Matematika\nMTsN 10 Agam | Penulis: Asnimar, S.Pd`;
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = `Skor_UjiFormatif_Bab14_${name.replace(/\s+/g, '_')}.txt`; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+  }
+
+  function resetQuiz() {
+    if (confirm("Apakah Anda yakin ingin mengulang ujian?")) {
+      document.getElementById('quizForm').reset(); document.getElementById('quizDate').valueAsDate = new Date();
+      document.getElementById('resultsPanel').classList.remove('show');
+      document.querySelectorAll('.option-label').forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'auto'; });
+      document.querySelectorAll('textarea').forEach(t => t.disabled = false);
+      const btn = document.querySelector('.btn-primary'); btn.disabled = false; btn.textContent = "✉️ KIRIM JAWABAN & LIHAT HASIL"; btn.style.opacity = "1";
+      document.getElementById('emailLink').style.display = 'none';
+      finalScores = { mcq: 0, essay: 0, total: 0 }; window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>
