@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ujian Tengah Semester (UTS) | Matematika Kelas IX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d4af37;
+    --gold-soft: #e9c767;
+    --gold-deep: #a8842a;
+    --ink: #0a0e1a;
+    --ink-2: #111729;
+    --ink-3: #1a2138;
+    --text: #e8e4d8;
+    --muted: #a9a28c;
+    --success: #4caf50;
+    --error: #f44336;
+    --warning: #ff9800;
+    --info: #2196f3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #070912 0%, #0a0e1a 50%, #06080f 100%);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,14,26,0.85);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+  }
+  .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--text); text-decoration: none;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    transition: color 0.3s; display: flex; align-items: center; gap: 6px;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px;
+  }
+
+  /* ===== UTS HEADER ===== */
+  .uts-header {
+    text-align: center; margin-bottom: 50px;
+    padding: 50px 30px;
+    background: linear-gradient(145deg, rgba(212,175,55,0.1), rgba(10,14,26,0.6));
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .uts-header::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .uts-header .eyebrow {
+    font-size: 12px; letter-spacing: 6px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .uts-header .eyebrow::before, .uts-header .eyebrow::after {
+    content: ""; width: 40px; height: 1px; background: var(--gold);
+  }
+  .uts-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 60px); font-weight: 900;
+    background: linear-gradient(180deg, #fff 0%, var(--gold-soft) 60%, var(--gold-deep) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 16px; letter-spacing: -1px;
+  }
+  .uts-header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px; color: var(--muted);
+    max-width: 700px; margin: 0 auto 24px;
+  }
+  .uts-badge {
+    display: inline-block; padding: 10px 24px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: var(--ink); font-weight: 700; font-size: 13px;
+    letter-spacing: 3px; text-transform: uppercase;
+    border-radius: 30px; margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(212,175,55,0.3);
+  }
+  .uts-meta {
+    display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+    margin-top: 24px; padding-top: 24px;
+    border-top: 1px solid rgba(212,175,55,0.2);
+  }
+  .uts-meta-item { text-align: center; }
+  .uts-meta-item .label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .uts-meta-item .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: var(--text); font-weight: 600;
+  }
+
+  /* ===== EXAM INFO ===== */
+  .exam-info {
+    padding: 30px; margin-bottom: 40px;
+    background: rgba(212,175,55,0.05);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px;
+  }
+  .exam-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); margin-bottom: 16px; font-size: 20px;
+  }
+  .exam-info-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin-top: 16px;
+  }
+  .info-card {
+    padding: 16px; background: rgba(0,0,0,0.2);
+    border-radius: 8px; border-left: 3px solid var(--gold);
+  }
+  .info-card .label {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .info-card .value {
+    font-size: 14px; color: var(--text); font-weight: 500;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    padding: 24px; margin: 40px 0 24px;
+    background: linear-gradient(145deg, rgba(26,33,56,0.8), rgba(10,14,26,0.8));
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+  }
+  .section-header .section-badge {
+    display: inline-block; padding: 6px 16px;
+    background: var(--gold); color: var(--ink);
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    border-radius: 20px; font-weight: 700; margin-bottom: 12px;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; color: var(--gold); margin-bottom: 8px;
+  }
+  .section-header p {
+    font-size: 13px; color: var(--muted);
+  }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .content-section {
+    margin-bottom: 30px; padding: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(212,175,55,0.1);
+    border-radius: 12px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 16px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif;
+    font-size: 14px; transition: all 0.3s;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none; border-color: var(--gold); background: rgba(255,255,255,0.08);
+  }
+
+  /* ===== QUESTION BLOCKS ===== */
+  .question-block {
+    margin-bottom: 24px; padding: 24px;
+    background: rgba(10,14,26,0.6);
+    border: 1px solid rgba(212,175,55,0.15);
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+  .question-block:hover {
+    border-color: rgba(212,175,55,0.3);
+  }
+  .question-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 14px; gap: 12px; flex-wrap: wrap;
+  }
+  .question-text {
+    font-weight: 500; color: #fff; font-size: 15px;
+    flex: 1; min-width: 250px;
+  }
+  .question-num {
+    color: var(--gold); font-family: 'Playfair Display', serif;
+    font-weight: 700; margin-right: 8px;
+  }
+  .question-points {
+    padding: 4px 12px; background: rgba(212,175,55,0.15);
+    border: 1px solid var(--gold); border-radius: 20px;
+    font-size: 11px; color: var(--gold); letter-spacing: 1px;
+    font-weight: 600; white-space: nowrap;
+  }
+
+  /* ===== OPTIONS ===== */
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option-label {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .option-label:hover {
+    background: rgba(212,175,55,0.08); border-color: rgba(212,175,55,0.3);
+  }
+  .option-label input[type="radio"],
+  .option-label input[type="checkbox"] {
+    accent-color: var(--gold); width: 18px; height: 18px; flex-shrink: 0;
+  }
+  .option-label.correct {
+    background: rgba(76, 175, 80, 0.15); border-color: var(--success);
+  }
+  .option-label.incorrect {
+    background: rgba(244, 67, 54, 0.15); border-color: var(--error);
+  }
+
+  /* ===== TRUE/FALSE ===== */
+  .tf-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tf-options .option-label { justify-content: center; }
+
+  /* ===== MATCHING ===== */
+  .matching-container {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px;
+    align-items: center;
+  }
+  .matching-left {
+    padding: 12px 16px; background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.2); border-radius: 6px;
+    color: var(--text); font-size: 14px;
+  }
+  .matching-arrow {
+    color: var(--gold); font-size: 20px; text-align: center;
+  }
+  .matching-select {
+    width: 100%; padding: 12px 16px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 6px; color: var(--text); font-family: 'Poppins', sans-serif;
+    font-size: 14px; transition: all 0.3s; cursor: pointer;
+  }
+  .matching-select:focus {
+    outline: none; border-color: var(--gold);
+  }
+  .matching-select.correct { border-color: var(--success); background: rgba(76,175,80,0.1); }
+  .matching-select.incorrect { border-color: var(--error); background: rgba(244,67,54,0.1); }
+
+  /* ===== ACTION BUTTONS ===== */
+  .action-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; justify-content: center; }
+  .btn {
+    padding: 14px 24px; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; border: none; border-radius: 4px;
+    cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600;
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: var(--ink); box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(212,175,55,0.4); }
+  .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid rgba(212,175,55,0.3); }
+  .btn-secondary:hover { background: rgba(212,175,55,0.1); border-color: var(--gold); }
+  .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+  .btn-outline:hover { background: rgba(212,175,55,0.1); }
+
+  /* ===== RESULTS ===== */
+  .results-panel {
+    display: none; margin-top: 30px; padding: 30px;
+    background: rgba(212,175,55,0.05); border: 2px solid var(--gold);
+    border-radius: 12px; text-align: center;
+  }
+  .results-panel.show { display: block; animation: fadeIn 0.5s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  
+  .score-display {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px; margin: 20px 0;
+  }
+  .score-item { padding: 20px; background: rgba(0,0,0,0.2); border-radius: 8px; }
+  .score-item .label { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+  .score-item .value { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); margin-top: 8px; }
+
+  .final-grade {
+    margin-top: 20px; padding: 24px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(168,132,42,0.15));
+    border: 2px solid var(--gold); border-radius: 12px;
+  }
+  .final-grade .label {
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .final-grade .value {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; color: var(--gold); font-weight: 900;
+  }
+  .final-grade .predicate {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; color: var(--gold-soft); margin-top: 8px; font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid rgba(212,175,55,0.15);
+    padding: 40px 24px; text-align: center;
+    background: rgba(7,9,18,0.8); margin-top: 60px;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+  .footer-contact { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .footer-contact a { color: var(--gold-soft); text-decoration: none; }
+  .copyright { font-size: 11px; letter-spacing: 2px; color: #6b6555; text-transform: uppercase; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    nav, .action-bar, footer { display: none !important; }
+    body { background: #fff; color: #000; }
+    .container { max-width: 100%; padding: 0; }
+    .content-section, .question-block { background: #fff; border: 1px solid #ccc; color: #000; break-inside: avoid; }
+    .section-title, .uts-header h1 { color: #000 !important; -webkit-text-fill-color: #000 !important; }
+  }
+
+  @media (max-width: 600px) {
+    .score-display { grid-template-columns: 1fr 1fr; }
+    .action-bar { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+    .matching-container { grid-template-columns: 1fr; }
+    .matching-arrow { transform: rotate(90deg); }
+    .tf-options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="nav-inner">
+    <ul class="nav-links">
+      <li><a href="10.html">← Bab 10: Jaring-jaring Limas</a></li>
+      <li><a href="index.html">📖 Daftar Isi</a></li>
+      <li><a href="12.html">Bab 12: Volume Limas →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+
+  <!-- UTS Header -->
+  <header class="uts-header">
+    <div class="uts-badge">🏆 Ujian Tengah Semester</div>
+    <div class="eyebrow">Pertemuan 11 • Semester Ganjil</div>
+    <h1>UTS Matematika</h1>
+    <p class="subtitle">Evaluasi komprehensif materi Bab 1 s.d. Bab 10 — dari aljabar linear hingga geometri bangun ruang sisi datar</p>
+    
+    <div class="uts-meta">
+      <div class="uts-meta-item">
+        <div class="label">Mata Pelajaran</div>
+        <div class="value">Matematika</div>
+      </div>
+      <div class="uts-meta-item">
+        <div class="label">Kelas</div>
+        <div class="value">IX (Sembilan)</div>
+      </div>
+      <div class="uts-meta-item">
+        <div class="label">Penulis</div>
+        <div class="value">Asnimar, S.Pd</div>
+      </div>
+      <div class="uts-meta-item">
+        <div class="label">Sekolah</div>
+        <div class="value">MTsN 10 Agam</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Exam Info -->
+  <div class="exam-info">
+    <h3>📋 Petunjuk Ujian</h3>
+    <p style="color: var(--muted); font-size: 14px;">
+      Ujian ini terdiri dari <strong style="color:var(--gold)">40 soal</strong> dengan <strong style="color:var(--gold)">4 tipe berbeda</strong>. 
+      Bacalah setiap soal dengan teliti sebelum menjawab. Waktu pengerjaan: <strong style="color:var(--gold)">90 menit</strong>.
+    </p>
+    <div class="exam-info-grid">
+      <div class="info-card">
+        <div class="label">Bagian A</div>
+        <div class="value">Pilihan Ganda (20 soal × 10 poin = 200)</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Bagian B</div>
+        <div class="value">Pilihan Ganda Kompleks (10 soal × 10 poin = 100)</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Bagian C</div>
+        <div class="value">Benar/Salah (5 soal × 10 poin = 50)</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Bagian D</div>
+        <div class="value">Menjodohkan (5 soal × 10 poin = 50)</div>
+      </div>
+      <div class="info-card" style="border-left-color: var(--gold-soft);">
+        <div class="label">Total Skor</div>
+        <div class="value" style="color: var(--gold); font-size: 18px; font-weight: 700;">400 poin → Nilai Akhir (skala 100)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FORM UJIAN ===== -->
+  <form id="examForm">
+    
+    <!-- Identitas -->
+    <div class="content-section">
+      <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 16px;">📋 Identitas Siswa</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <div class="form-group">
+          <label>Nama Lengkap *</label>
+          <input type="text" id="studentName" required placeholder="Masukkan nama lengkap">
+        </div>
+        <div class="form-group">
+          <label>No. Absen / NIS *</label>
+          <input type="text" id="studentNIS" required placeholder="Masukkan NIS">
+        </div>
+        <div class="form-group">
+          <label>Kelas *</label>
+          <select id="studentClass" required>
+            <option value="">Pilih Kelas</option>
+            <option value="IX-A">IX-A</option>
+            <option value="IX-B">IX-B</option>
+            <option value="IX-C">IX-C</option>
+            <option value="IX-D">IX-D</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tanggal Ujian</label>
+          <input type="date" id="examDate" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== BAGIAN A: PILIHAN GANDA ==================== -->
+    <div class="section-header">
+      <div class="section-badge">Bagian A</div>
+      <h2>Pilihan Ganda</h2>
+      <p>20 soal • Pilih satu jawaban yang paling tepat • Skor 10 poin per soal</p>
+    </div>
+    <div id="mcqContainer"></div>
+
+    <!-- ==================== BAGIAN B: PG KOMPLEKS ==================== -->
+    <div class="section-header">
+      <div class="section-badge">Bagian B</div>
+      <h2>Pilihan Ganda Kompleks</h2>
+      <p>10 soal • Pilih <strong>SEMUA</strong> jawaban yang benar (bisa lebih dari satu) • Skor 10 poin per soal</p>
+    </div>
+    <div id="mcqComplexContainer"></div>
+
+    <!-- ==================== BAGIAN C: BENAR/SALAH ==================== -->
+    <div class="section-header">
+      <div class="section-badge">Bagian C</div>
+      <h2>Benar atau Salah</h2>
+      <p>5 soal • Tentukan apakah pernyataan berikut BENAR atau SALAH • Skor 10 poin per soal</p>
+    </div>
+    <div id="tfContainer"></div>
+
+    <!-- ==================== BAGIAN D: MENJODOHKAN ==================== -->
+    <div class="section-header">
+      <div class="section-badge">Bagian D</div>
+      <h2>Menjodohkan</h2>
+      <p>5 soal • Pasangkan pernyataan di kiri dengan jawaban yang tepat di kanan • Skor 10 poin per soal</p>
+    </div>
+    <div id="matchingContainer"></div>
+
+    <!-- Action Buttons -->
+    <div class="action-bar">
+      <button type="button" class="btn btn-primary" onclick="submitExam()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+      <button type="button" class="btn btn-secondary" onclick="downloadPDF()">📄 UNDUH PDF LENGKAP</button>
+      <button type="button" class="btn btn-secondary" onclick="downloadTXT()">📥 UNDUH SKOR (TXT)</button>
+      <button type="button" class="btn btn-outline" onclick="resetExam()">🔄 MULAI ULANG</button>
+      <a id="emailLink" href="#" class="btn btn-outline" style="display:none;">📧 KIRIM KE EMAIL GURU</a>
+    </div>
+  </form>
+
+  <!-- Results Panel -->
+  <div class="results-panel" id="resultsPanel">
+    <h3 style="font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 10px; font-size: 24px;">📊 Hasil Ujian Tengah Semester</h3>
+    <p id="resultMessage" style="color: var(--text); margin-bottom: 20px;"></p>
+    
+    <div class="score-display">
+      <div class="score-item">
+        <div class="label">Pilihan Ganda</div>
+        <div class="value" id="scoreMCQ">0</div>
+        <div style="font-size: 11px; color: var(--muted);">/ 200</div>
+      </div>
+      <div class="score-item">
+        <div class="label">PG Kompleks</div>
+        <div class="value" id="scoreMCQC">0</div>
+        <div style="font-size: 11px; color: var(--muted);">/ 100</div>
+      </div>
+      <div class="score-item">
+        <div class="label">Benar/Salah</div>
+        <div class="value" id="scoreTF">0</div>
+        <div style="font-size: 11px; color: var(--muted);">/ 50</div>
+      </div>
+      <div class="score-item">
+        <div class="label">Menjodohkan</div>
+        <div class="value" id="scoreMatch">0</div>
+        <div style="font-size: 11px; color: var(--muted);">/ 50</div>
+      </div>
+    </div>
+
+    <div class="final-grade">
+      <div class="label">Skor Total</div>
+      <div class="value" id="scoreTotal">0 / 400</div>
+      <div class="label" style="margin-top: 16px;">Nilai Akhir (Skala 100)</div>
+      <div class="value" id="finalValue">0</div>
+      <div class="predicate" id="predicate">-</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">UTS Matematika Kelas IX</div>
+  <div class="footer-contact">
+    MTsN 10 Agam • <a href="mailto:asnimar130370@gmail.com">asnimar130370@gmail.com</a>
+  </div>
+  <div style="width: 100px; height: 1px; background: rgba(212,175,55,0.3); margin: 0 auto 16px;"></div>
+  <div class="copyright">© 2026 Asnimar, S.Pd — Hak Cipta Dilindungi Undang-Undang</div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  document.getElementById('examDate').valueAsDate = new Date();
+
+  // ==================== DATA SOAL ====================
+
+  // ===== PILIHAN GANDA (20 soal) =====
+  const mcqQuestions = [
+    // Bab 1 - PLDV
+    { q: "Manakah yang merupakan Persamaan Linear Dua Variabel (PLDV)?", options: ["2x + 5 = 15", "3x + 4y = 12", "x² + y = 10", "2x + 3y + 4z = 20"], answer: 1, bab: "Bab 1" },
+    { q: "Dalam persamaan 5x − 3y = 15, koefisien dari variabel y adalah...", options: ["5", "3", "−3", "15"], answer: 2, bab: "Bab 1" },
+    // Bab 2 - Metode Grafik
+    { q: "Jika dua garis pada bidang Kartesius sejajar (tidak berpotongan), maka SPLDV memiliki...", options: ["Satu penyelesaian", "Dua penyelesaian", "Tak hingga penyelesaian", "Tidak ada penyelesaian"], answer: 3, bab: "Bab 2" },
+    { q: "Matematikawan yang memperkenalkan konsep geometri analitik (dasar metode grafik) adalah...", options: ["Isaac Newton", "René Descartes", "Euclides", "Pythagoras"], answer: 1, bab: "Bab 2" },
+    // Bab 3 - Substitusi
+    { q: "Langkah pertama dalam metode substitusi adalah...", options: ["Langsung menjumlahkan kedua persamaan", "Mengisolasi salah satu variabel dari salah satu persamaan", "Membuat tabel nilai", "Mengalikan kedua persamaan"], answer: 1, bab: "Bab 3" },
+    { q: "Penyelesaian SPLDV x + y = 5 dan y = 2x − 1 dengan metode substitusi adalah...", options: ["(1, 4)", "(2, 3)", "(3, 2)", "(4, 1)"], answer: 1, bab: "Bab 3" },
+    // Bab 4 - Eliminasi
+    { q: "Jika koefisien variabel yang akan dieliminasi berlawanan tanda (+3 dan −3), maka kedua persamaan harus...", options: ["Dikurangkan", "Dikalikan", "Dijumlahkan", "Dibiarkan"], answer: 2, bab: "Bab 4" },
+    { q: "Konsep 'al-muqabala' dalam aljabar Islam yang menjadi dasar metode eliminasi berarti...", options: ["Penggantian", "Penyeimbangan/penghilangan", "Perkalian", "Pembagian"], answer: 1, bab: "Bab 4" },
+    // Bab 5 - Campuran
+    { q: "Metode campuran dalam menyelesaikan SPLDV merupakan kombinasi dari...", options: ["Metode grafik dan substitusi", "Metode eliminasi dan substitusi", "Metode grafik dan eliminasi", "Metode aljabar dan aritmatika"], answer: 1, bab: "Bab 5" },
+    { q: "Keunggulan utama metode campuran dibanding eliminasi murni adalah...", options: ["Lebih mudah divisualisasikan", "Lebih efisien karena hanya perlu satu kali eliminasi", "Tidak memerlukan perhitungan", "Cocok untuk persamaan kuadrat"], answer: 1, bab: "Bab 5" },
+    // Bab 6 - Unsur Bangun Ruang
+    { q: "Jumlah sisi pada kubus adalah...", options: ["4", "5", "6", "8"], answer: 2, bab: "Bab 6" },
+    { q: "Teorema Euler untuk bangun ruang sisi datar menyatakan...", options: ["V + E + F = 2", "V − E + F = 2", "V × E × F = 2", "V / E / F = 2"], answer: 1, bab: "Bab 6" },
+    { q: "Bangun ruang yang memiliki alas berbentuk segi-n dan sisi tegak berbentuk segitiga adalah...", options: ["Prisma", "Limas", "Kubus", "Balok"], answer: 1, bab: "Bab 6" },
+    // Bab 7 - Jaring-jaring Prisma
+    { q: "Jumlah jaring-jaring kubus yang berbeda adalah...", options: ["6", "8", "11", "12"], answer: 2, bab: "Bab 7" },
+    { q: "Jaring-jaring prisma segitiga terdiri dari...", options: ["2 segitiga dan 2 persegi panjang", "2 segitiga dan 3 persegi panjang", "3 segitiga dan 2 persegi panjang", "2 persegi panjang saja"], answer: 1, bab: "Bab 7" },
+    // Bab 8 - Luas Permukaan Prisma
+    { q: "Rumus umum luas permukaan prisma adalah...", options: ["L = La + Ka", "L = (2 × La) + (Ka × t)", "L = La × t", "L = 2 × Ka × t"], answer: 1, bab: "Bab 8" },
+    { q: "Luas permukaan balok dengan p=8 cm, l=5 cm, t=4 cm adalah...", options: ["164 cm²", "184 cm²", "204 cm²", "224 cm²"], answer: 1, bab: "Bab 8" },
+    // Bab 9 - Volume Prisma
+    { q: "Volume balok dengan p=8 cm, l=5 cm, t=4 cm adalah...", options: ["160 cm³", "180 cm³", "200 cm³", "220 cm³"], answer: 0, bab: "Bab 9" },
+    { q: "1 m³ sama dengan...", options: ["100 liter", "500 liter", "1.000 liter", "10.000 liter"], answer: 2, bab: "Bab 9" },
+    // Bab 10 - Jaring-jaring Limas
+    { q: "Jumlah bidang pada jaring-jaring limas segiempat adalah...", options: ["3", "4", "5", "6"], answer: 2, bab: "Bab 10" }
+  ];
+
+  // ===== PG KOMPLEKS (10 soal) =====
+  const mcqComplexQuestions = [
+    // Bab 1
+    { q: "Manakah yang merupakan ciri-ciri PLDV? (Pilih semua yang benar)", options: ["Memiliki tanda sama dengan (=)", "Memiliki tepat dua variabel", "Pangkat tertinggi variabel adalah satu", "Memiliki tiga variabel atau lebih"], answers: [0, 1, 2], bab: "Bab 1" },
+    // Bab 2
+    { q: "Berikut yang merupakan kemungkinan posisi dua garis dalam metode grafik SPLDV adalah...", options: ["Berpotongan di satu titik", "Sejajar (tidak berpotongan)", "Berimpit (satu garis)", "Saling tegak lurus selalu"], answers: [0, 1, 2], bab: "Bab 2" },
+    // Bab 3
+    { q: "Langkah-langkah metode substitusi yang benar adalah...", options: ["Isolasi salah satu variabel", "Substitusikan ke persamaan lain", "Selesaikan PLSV yang tersisa", "Langsung menggambar grafik"], answers: [0, 1, 2], bab: "Bab 3" },
+    // Bab 4
+    { q: "Dalam metode eliminasi, aturan yang benar adalah...", options: ["Koefisien sama tanda → kurangkan", "Koefisien berlawanan tanda → jumlahkan", "Kalikan kedua ruas dengan bilangan yang sama", "Hanya boleh mengeliminasi variabel x"], answers: [0, 1, 2], bab: "Bab 4" },
+    // Bab 6
+    { q: "Unsur-unsur bangun ruang sisi datar meliputi...", options: ["Sisi (bidang)", "Rusuk", "Titik sudut", "Jari-jari"], answers: [0, 1, 2], bab: "Bab 6" },
+    { q: "Bangun ruang berikut yang termasuk sisi datar adalah...", options: ["Kubus", "Balok", "Tabung", "Limas"], answers: [0, 1, 3], bab: "Bab 6" },
+    // Bab 7
+    { q: "Komponen jaring-jaring prisma segiempat adalah...", options: ["2 segiempat (alas & tutup)", "4 persegi panjang (sisi tegak)", "1 segitiga", "Total 6 bidang"], answers: [0, 1, 3], bab: "Bab 7" },
+    // Bab 8
+    { q: "Pernyataan yang benar tentang luas permukaan kubus dengan rusuk s adalah...", options: ["L = 6s²", "Memiliki 6 sisi persegi sama besar", "L = 4s²", "Satuan dalam cm²"], answers: [0, 1, 3], bab: "Bab 8" },
+    // Bab 9
+    { q: "Pernyataan yang benar tentang volume prisma adalah...", options: ["V = Luas Alas × Tinggi", "Satuan dalam cm³ atau liter", "1 liter = 1.000 cm³", "V = Keliling × Tinggi"], answers: [0, 1, 2], bab: "Bab 9" },
+    // Bab 10
+    { q: "Ciri-ciri jaring-jaring limas adalah...", options: ["Memiliki 1 alas segi-n", "Memiliki n segitiga sebagai sisi tegak", "Semua segitiga bertemu di satu titik puncak", "Memiliki 2 alas segi-n"], answers: [0, 1, 2], bab: "Bab 10" }
+  ];
+
+  // ===== BENAR/SALAH (5 soal) =====
+  const tfQuestions = [
+    { q: "SPLDV yang dua garisnya sejajar memiliki tepat satu penyelesaian.", answer: false, bab: "Bab 2" },
+    { q: "Metode substitusi paling efektif ketika salah satu persamaan memiliki koefisien 1 pada salah satu variabel.", answer: true, bab: "Bab 3" },
+    { q: "Kubus memiliki 12 diagonal sisi dan 4 diagonal ruang.", answer: true, bab: "Bab 6" },
+    { q: "Luas permukaan balok dengan p=10 cm, l=6 cm, t=5 cm adalah 280 cm².", answer: true, bab: "Bab 8" },
+    { q: "Jaring-jaring limas segienam terdiri dari 7 bidang (1 segienam + 6 segitiga).", answer: true, bab: "Bab 10" }
+  ];
+
+  // ===== MENJODOHKAN (5 soal) =====
+  const matchingQuestions = [
+    { 
+      q: "Pasangkan konsep matematika dengan definisinya yang tepat:",
+      left: [
+        "Koefisien dalam PLDV",
+        "Metode Grafik SPLDV",
+        "Teorema Euler",
+        "Luas Permukaan Prisma",
+        "Volume Prisma"
+      ],
+      right: [
+        "V − E + F = 2",
+        "Bilangan yang melekat pada variabel",
+        "(2 × La) + (Ka × t)",
+        "Mencari titik potong dua garis",
+        "La × t"
+      ],
+      answers: [1, 3, 0, 2, 4],
+      bab: "Campuran"
+    }
+  ];
+
+  // ==================== RENDER SOAL ====================
+
+  // Render MCQ
+  const mcqContainer = document.getElementById('mcqContainer');
+  mcqQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-header">
+        <div class="question-text">
+          <span class="question-num">A${index + 1}.</span>
+          <span style="font-size:10px; color:var(--muted); letter-spacing:2px;">[${item.bab}]</span><br>
+          ${item.q}
+        </div>
+        <div class="question-points">10 POIN</div>
+      </div>
+      <div class="options">
+        ${item.options.map((opt, optIndex) => `
+          <label class="option-label" id="mcq_${index}_${optIndex}">
+            <input type="radio" name="mcq${index}" value="${optIndex}">
+            <span>${String.fromCharCode(65 + optIndex)}. ${opt}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    mcqContainer.appendChild(qDiv);
+  });
+
+  // Render PG Kompleks
+  const mcqComplexContainer = document.getElementById('mcqComplexContainer');
+  mcqComplexQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-header">
+        <div class="question-text">
+          <span class="question-num">B${index + 1}.</span>
+          <span style="font-size:10px; color:var(--muted); letter-spacing:2px;">[${item.bab}]</span><br>
+          ${item.q}
+        </div>
+        <div class="question-points">10 POIN</div>
+      </div>
+      <div class="options">
+        ${item.options.map((opt, optIndex) => `
+          <label class="option-label" id="mcqc_${index}_${optIndex}">
+            <input type="checkbox" name="mcqc${index}" value="${optIndex}">
+            <span>${String.fromCharCode(65 + optIndex)}. ${opt}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    mcqComplexContainer.appendChild(qDiv);
+  });
+
+  // Render Benar/Salah
+  const tfContainer = document.getElementById('tfContainer');
+  tfQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    qDiv.innerHTML = `
+      <div class="question-header">
+        <div class="question-text">
+          <span class="question-num">C${index + 1}.</span>
+          <span style="font-size:10px; color:var(--muted); letter-spacing:2px;">[${item.bab}]</span><br>
+          ${item.q}
+        </div>
+        <div class="question-points">10 POIN</div>
+      </div>
+      <div class="tf-options">
+        <label class="option-label" id="tf_${index}_true">
+          <input type="radio" name="tf${index}" value="true">
+          <span>✅ BENAR</span>
+        </label>
+        <label class="option-label" id="tf_${index}_false">
+          <input type="radio" name="tf${index}" value="false">
+          <span>❌ SALAH</span>
+        </label>
+      </div>
+    `;
+    tfContainer.appendChild(qDiv);
+  });
+
+  // Render Menjodohkan
+  const matchingContainer = document.getElementById('matchingContainer');
+  matchingQuestions.forEach((item, index) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'question-block';
+    
+    // Shuffle right options for dropdown
+    const shuffledRight = [...item.right].sort(() => Math.random() - 0.5);
+    
+    qDiv.innerHTML = `
+      <div class="question-header">
+        <div class="question-text">
+          <span class="question-num">D1.</span>
+          <span style="font-size:10px; color:var(--muted); letter-spacing:2px;">[${item.bab}]</span><br>
+          ${item.q}
+        </div>
+        <div class="question-points">50 POIN</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        ${item.left.map((leftItem, i) => `
+          <div class="matching-container">
+            <div class="matching-left">${leftItem}</div>
+            <div class="matching-arrow">→</div>
+            <select class="matching-select" id="match_${i}" data-correct="${item.answers[i]}">
+              <option value="">-- Pilih pasangan --</option>
+              ${shuffledRight.map(opt => `<option value="${item.right.indexOf(opt)}">${opt}</option>`).join('')}
+            </select>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    matchingContainer.appendChild(qDiv);
+  });
+
+  // ==================== SUBMIT & GRADING ====================
+
+  let finalScores = { mcq: 0, mcqc: 0, tf: 0, match: 0, total: 0 };
+
+  function submitExam() {
+    const name = document.getElementById('studentName').value;
+    const nis = document.getElementById('studentNIS').value;
+    const cls = document.getElementById('studentClass').value;
+    
+    if (!name || !nis || !cls) {
+      alert("Harap lengkapi identitas siswa (Nama, NIS, dan Kelas) sebelum mengirim jawaban!");
+      return;
+    }
+
+    // ===== Grade MCQ (20 soal × 10 poin = 200) =====
+    let mcqScore = 0;
+    mcqQuestions.forEach((item, index) => {
+      const selected = document.querySelector(`input[name="mcq${index}"]:checked`);
+      const labels = document.querySelectorAll(`[id^="mcq_${index}_"]`);
+      labels.forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'none'; });
+
+      if (selected) {
+        const val = parseInt(selected.value);
+        if (val === item.answer) {
+          mcqScore += 10;
+          document.getElementById(`mcq_${index}_${val}`).classList.add('correct');
+        } else {
+          document.getElementById(`mcq_${index}_${val}`).classList.add('incorrect');
+          document.getElementById(`mcq_${index}_${item.answer}`).classList.add('correct');
+        }
+      } else {
+        document.getElementById(`mcq_${index}_${item.answer}`).classList.add('correct');
+      }
+    });
+
+    // ===== Grade PG Kompleks (10 soal × 10 poin = 100) =====
+    // Sistem: jika pilihan siswa = answers (tepat semua), dapat 10 poin; jika sebagian benar, dapat 5 poin; jika salah total, 0
+    let mcqcScore = 0;
+    mcqComplexQuestions.forEach((item, index) => {
+      const checkboxes = document.querySelectorAll(`input[name="mcqc${index}"]`);
+      const labels = document.querySelectorAll(`[id^="mcqc_${index}_"]`);
+      labels.forEach(l => { l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'none'; });
+
+      const selectedValues = [];
+      checkboxes.forEach(cb => {
+        if (cb.checked) selectedValues.push(parseInt(cb.value));
+      });
+
+      // Tandai jawaban benar (hijau) dan salah (merah)
+      item.answers.forEach(correctIdx => {
+        document.getElementById(`mcqc_${index}_${correctIdx}`).classList.add('correct');
+      });
+      selectedValues.forEach(val => {
+        if (!item.answers.includes(val)) {
+          document.getElementById(`mcqc_${index}_${val}`).classList.add('incorrect');
+        }
+      });
+
+      // Penilaian
+      const correctSelected = selectedValues.filter(v => item.answers.includes(v)).length;
+      const wrongSelected = selectedValues.filter(v => !item.answers.includes(v)).length;
+      
+      if (wrongSelected === 0 && correctSelected === item.answers.length) {
+        mcqcScore += 10; // Sempurna
+      } else if (wrongSelected === 0 && correctSelected > 0) {
+        mcqcScore += 5; // Sebagian benar, tidak ada yang salah
+      }
+      // Jika ada yang salah dipilih, 0 poin
+    });
+
+    // ===== Grade Benar/Salah (5 soal × 10 poin = 50) =====
+    let tfScore = 0;
+    tfQuestions.forEach((item, index) => {
+      const selected = document.querySelector(`input[name="tf${index}"]:checked`);
+      const trueLabel = document.getElementById(`tf_${index}_true`);
+      const falseLabel = document.getElementById(`tf_${index}_false`);
+      trueLabel.style.pointerEvents = 'none';
+      falseLabel.style.pointerEvents = 'none';
+
+      // Tandai jawaban benar
+      if (item.answer === true) trueLabel.classList.add('correct');
+      else falseLabel.classList.add('correct');
+
+      if (selected) {
+        const userAnswer = selected.value === 'true';
+        if (userAnswer === item.answer) {
+          tfScore += 10;
+        } else {
+          if (userAnswer) trueLabel.classList.add('incorrect');
+          else falseLabel.classList.add('incorrect');
+        }
+      }
+    });
+
+    // ===== Grade Menjodohkan (5 pasangan × 10 poin = 50) =====
+    let matchScore = 0;
+    for (let i = 0; i < 5; i++) {
+      const select = document.getElementById(`match_${i}`);
+      const correct = parseInt(select.dataset.correct);
+      const userChoice = parseInt(select.value);
+      
+      if (userChoice === correct) {
+        matchScore += 10;
+        select.classList.add('correct');
+      } else {
+        select.classList.add('incorrect');
+      }
+      select.disabled = true;
+    }
+
+    // ===== Hitung Total =====
+    finalScores = {
+      mcq: mcqScore,
+      mcqc: mcqcScore,
+      tf: tfScore,
+      match: matchScore,
+      total: mcqScore + mcqcScore + tfScore + matchScore
+    };
+
+    const finalValue = Math.round((finalScores.total / 400) * 100);
+
+    // Display Results
+    document.getElementById('scoreMCQ').textContent = finalScores.mcq;
+    document.getElementById('scoreMCQC').textContent = finalScores.mcqc;
+    document.getElementById('scoreTF').textContent = finalScores.tf;
+    document.getElementById('scoreMatch').textContent = finalScores.match;
+    document.getElementById('scoreTotal').textContent = `${finalScores.total} / 400`;
+    document.getElementById('finalValue').textContent = finalValue;
+    
+    let predicate = "";
+    if (finalValue >= 90) predicate = "🌟 Istimewa — Penguasaan Materi Sangat Baik";
+    else if (finalValue >= 80) predicate = "✨ Sangat Baik — Pertahankan Prestasi";
+    else if (finalValue >= 70) predicate = "👍 Baik — Terus Tingkatkan";
+    else if (finalValue >= 60) predicate = "📚 Cukup — Perlu Penguatan di Beberapa Materi";
+    else predicate = "💪 Perlu Belajar Lebih Giat — Jangan Menyerah!";
+    
+    document.getElementById('predicate').textContent = predicate;
+    
+    let msg = `Terima kasih, ${name}! Jawaban UTS Anda telah berhasil dikumpulkan.`;
+    document.getElementById('resultMessage').textContent = msg;
+    document.getElementById('resultsPanel').classList.add('show');
+    
+    document.querySelector('.btn-primary').disabled = true;
+    document.querySelector('.btn-primary').textContent = "✓ SUDAH DIKIRIM";
+    document.querySelector('.btn-primary').style.opacity = "0.6";
+
+    // Email
+    const emailBody = `HASIL UJIAN TENGAH SEMESTER (UTS) MATEMATIKA%0D%0A%0D%0ANama: ${name}%0D%0ANIS: ${nis}%0D%0AKelas: ${cls}%0D%0ATanggal: ${document.getElementById('examDate').value}%0D%0A%0D%0ARINCIAN NILAI:%0D%0A- Pilihan Ganda: ${finalScores.mcq}/200%0D%0A- PG Kompleks: ${finalScores.mcqc}/100%0D%0A- Benar/Salah: ${finalScores.tf}/50%0D%0A- Menjodohkan: ${finalScores.match}/50%0D%0A- Total Skor: ${finalScores.total}/400%0D%0A- Nilai Akhir: ${finalValue}/100%0D%0A- Predikat: ${predicate}%0D%0A%0D%0AMateri: Bab 1-10 (PLDV, Grafik, Substitusi, Eliminasi, Campuran, Unsur BR, Jaring Prisma, LP Prisma, Vol Prisma, Jaring Limas)`;
+    document.getElementById('emailLink').href = `mailto:asnimar130370@gmail.com?subject=Hasil UTS Matematika - ${name} (${cls})&body=${emailBody}`;
+    document.getElementById('emailLink').style.display = 'inline-flex';
+
+    document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function downloadPDF() { window.print(); }
+
+  function downloadTXT() {
+    const name = document.getElementById('studentName').value || "Siswa";
+    const nis = document.getElementById('studentNIS').value || "-";
+    const cls = document.getElementById('studentClass').value || "-";
+    const date = document.getElementById('examDate').value || new Date().toLocaleDateString('id-ID');
+    const finalValue = Math.round((finalScores.total / 400) * 100);
+
+    let content = `HASIL UJIAN TENGAH SEMESTER (UTS) MATEMATIKA KELAS IX\n`;
+    content += `====================================================\n`;
+    content += `Nama   : ${name}\nNIS    : ${nis}\nKelas  : ${cls}\nTanggal: ${date}\n`;
+    content += `====================================================\n`;
+    content += `RINCIAN NILAI:\n`;
+    content += `  A. Pilihan Ganda       : ${finalScores.mcq} / 200\n`;
+    content += `  B. PG Kompleks         : ${finalScores.mcqc} / 100\n`;
+    content += `  C. Benar/Salah         : ${finalScores.tf} / 50\n`;
+    content += `  D. Menjodohkan         : ${finalScores.match} / 50\n`;
+    content += `----------------------------------------------------\n`;
+    content += `  TOTAL SKOR             : ${finalScores.total} / 400\n`;
+    content += `  NILAI AKHIR (skala 100): ${finalValue}\n`;
+    content += `====================================================\n\n`;
+    content += `Materi UTS: Bab 1 s.d. Bab 10\n`;
+    content += `- Bab 1: PLDV\n- Bab 2: Metode Grafik\n- Bab 3: Metode Substitusi\n`;
+    content += `- Bab 4: Metode Eliminasi\n- Bab 5: Metode Campuran\n`;
+    content += `- Bab 6: Unsur Bangun Ruang Sisi Datar\n- Bab 7: Jaring-jaring Prisma\n`;
+    content += `- Bab 8: Luas Permukaan Prisma\n- Bab 9: Volume Prisma\n- Bab 10: Jaring-jaring Limas\n`;
+    content += `\n====================================================\n`;
+    content += `Dikirim otomatis dari Sistem Ujian Matematika\nMTsN 10 Agam | Penulis: Asnimar, S.Pd`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Hasil_UTS_Matematika_${name.replace(/\s+/g, '_')}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function resetExam() {
+    if (confirm("Apakah Anda yakin ingin mengulang ujian? Semua jawaban akan dihapus.")) {
+      document.getElementById('examForm').reset();
+      document.getElementById('examDate').valueAsDate = new Date();
+      document.getElementById('resultsPanel').classList.remove('show');
+      
+      // Reset MCQ
+      document.querySelectorAll('[id^="mcq_"]').forEach(l => { 
+        l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'auto'; 
+      });
+      // Reset PG Kompleks
+      document.querySelectorAll('[id^="mcqc_"]').forEach(l => { 
+        l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'auto'; 
+      });
+      // Reset TF
+      document.querySelectorAll('[id^="tf_"]').forEach(l => { 
+        l.classList.remove('correct', 'incorrect'); l.style.pointerEvents = 'auto'; 
+      });
+      // Reset Matching
+      document.querySelectorAll('.matching-select').forEach(s => { 
+        s.classList.remove('correct', 'incorrect'); s.disabled = false; 
+      });
+      
+      const btn = document.querySelector('.btn-primary');
+      btn.disabled = false; btn.textContent = "✉️ KIRIM JAWABAN & LIHAT HASIL"; btn.style.opacity = "1";
+      document.getElementById('emailLink').style.display = 'none';
+      finalScores = { mcq: 0, mcqc: 0, tf: 0, match: 0, total: 0 };
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>
